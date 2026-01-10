@@ -3,21 +3,28 @@
 本仓库为原项目的演示仓库结构，保持原有逻辑与代码不变，仅对目录进行清晰拆分：前端、后端与实现代码分离。同时提供快速运行说明，便于论文 Demo 演示。
 
 ## 仓库结构
-- frontend/ 前端演示（Streamlit）
-  - frontend.py
+- frontend/
+  - index.html (Vue.js 前端)
 - backend/ 后端服务（FastAPI）
   - server/
     - main.py
-    - static/index.html
 - Req/ 实现代码（保持原目录与模块命名）
   - config、llm、tools、filters、experiment、demo 等
 - storage/ 运行期存储（后端自动创建）
   - uploads/、downloads/
 - jobs.json 任务记录文件（后端使用）
 
+## 系统实现架构
+
+本系统采用现代化的前后端分离架构，旨在提供高效、直观的需求生成演示体验：
+
+- **前端交互层**：基于 **Vue.js 3** 框架构建单页应用（SPA），利用 **TailwindCSS** 实现响应式与玻璃拟态（Glassmorphism）UI 设计。前端通过 RESTful API 与后端通信，支持实时任务状态轮询、异步文件上传及动态结果展示，确保流畅的用户交互体验。
+- **后端服务层**：采用 **FastAPI** 高性能异步框架，负责请求调度与核心业务逻辑编排。后端集成 **LangChain** 框架管理 LLM 调用链，通过 **DashScope** 接入通义千问等大模型，实现了从 APK 解析（Androguard/Apktool）、静态分析到多模态需求生成的全自动化流水线。
+- **数据与存储**：使用文件系统持久化存储任务状态（`jobs.json`）与生成产物（SRS、测试脚本、报告），确保演示环境的轻量化与易部署性。
+
 核心代码参考：
 - 后端入口: [main.py](file:///d:/nju/需求生成系统/github/backend/server/main.py)
-- 前端演示: [frontend.py](file:///d:/nju/需求生成系统/github/frontend/frontend.py)
+- 前端演示: [index.html](file:///d:/nju/需求生成系统/github/frontend/index.html)
 - 生成流程: [run_multi_model_unified6_demo.py](file:///d:/nju/需求生成系统/github/Req/demo/run_multi_model_unified6_demo.py)
 
 ## 环境准备
@@ -44,7 +51,7 @@
 python backend/server/main.py
 ```
 
-默认监听 0.0.0.0:8001，静态页面为 backend/server/static/index.html。
+默认监听 0.0.0.0:8001，静态页面为 frontend/index.html。
 
 接口功能：
 - /api/upload：上传 APK，返回 job_id
@@ -52,14 +59,12 @@ python backend/server/main.py
 - /api/status/{job_id}：查询任务状态与结果
 - /api/download/{job_id}/{file_type}：下载生成结果（srs/tests/test_json/report/zip）
 
-### 启动前端演示（Streamlit）
-在仓库根目录运行：
+### 启动前端演示
+访问后端服务地址即可体验完整功能：
 
-```bash
-streamlit run frontend/frontend.py
-```
+- **URL**: http://localhost:8001/
 
-在页面中选择语言与生成策略，输入应用目录路径（已解析的目录），进行演示生成。
+前端页面集成了任务配置、文件上传、实时状态监控及结果下载功能。
 
 ## 环境变量
 - DASHSCOPE_API_KEY：模型调用密钥（也可通过后端 /api/config 设置）

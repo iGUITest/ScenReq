@@ -1,68 +1,4 @@
 {
-  "ac960428-599c-475f-bc6d-b7e67d202fc9": {
-    "job_id": "ac960428-599c-475f-bc6d-b7e67d202fc9",
-    "status": "completed",
-    "created_at": "18924.125",
-    "file_path": "D:\\nju\\需求生成系统\\storage\\uploads\\ac960428-599c-475f-bc6d-b7e67d202fc9\\app.apk",
-    "original_filename": "ConverterNOW.apk",
-    "combo": "仅使用Activity分析",
-    "lang": "zh",
-    "app_name": "com.ferrarid.converterpro",
-    "result": {
-      "app_dir": "D:/nju/需求生成系统/storage/uploads/ac960428-599c-475f-bc6d-b7e67d202fc9/work/com.ferrarid.converterpro",
-      "ok": true,
-      "message": "",
-      "combo": "仅使用Activity分析",
-      "app": "com.ferrarid.converterpro",
-      "srs": "D:/nju/需求生成系统/Req/demo/output/仅使用Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro_SRS.json",
-      "tests": "D:/nju/需求生成系统/Req/demo/output/仅使用Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro_TestRequirements.json",
-      "test_json": "D:/nju/需求生成系统/Req/demo/output/仅使用Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro.json",
-      "report": "D:\\nju\\需求生成系统\\Req\\demo\\output\\仅使用Activity分析\\com.ferrarid.converterpro\\com.ferrarid.converterpro_功能测试报告.docx",
-      "zip": "D:\\nju\\需求生成系统\\Req\\demo\\output\\仅使用Activity分析\\com.ferrarid.converterpro\\com.ferrarid.converterpro_data.zip"
-    }
-  },
-  "581e605f-2aef-44d2-a7cc-1f0dcaa05192": {
-    "job_id": "581e605f-2aef-44d2-a7cc-1f0dcaa05192",
-    "status": "completed",
-    "created_at": "11664.343",
-    "file_path": "D:\\nju\\需求生成系统\\storage\\uploads\\581e605f-2aef-44d2-a7cc-1f0dcaa05192\\app.apk",
-    "original_filename": "ConverterNOW.apk",
-    "combo": "应用介绍+Activity分析",
-    "lang": "zh",
-    "result": {
-      "app_dir": "D:/nju/需求生成系统/storage/uploads/581e605f-2aef-44d2-a7cc-1f0dcaa05192/work/com.ferrarid.converterpro",
-      "ok": true,
-      "message": "",
-      "combo": "应用介绍+Activity分析",
-      "app": "com.ferrarid.converterpro",
-      "srs": "D:/nju/需求生成系统/Req/demo/output/应用介绍+Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro_SRS.json",
-      "tests": "D:/nju/需求生成系统/Req/demo/output/应用介绍+Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro_TestRequirements.json",
-      "test_json": "D:/nju/需求生成系统/Req/demo/output/应用介绍+Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro.json",
-      "report": "D:\\nju\\需求生成系统\\Req\\demo\\output\\应用介绍+Activity分析\\com.ferrarid.converterpro\\com.ferrarid.converterpro_功能测试报告.docx",
-      "zip": "D:\\nju\\需求生成系统\\Req\\demo\\output\\应用介绍+Activity分析\\com.ferrarid.converterpro\\com.ferrarid.converterpro_data.zip"
-    }
-  },
-  "e9fe9b81-546d-4915-828a-44b03ded23f2": {
-    "job_id": "e9fe9b81-546d-4915-828a-44b03ded23f2",
-    "status": "completed",
-    "created_at": "13083.015",
-    "file_path": "D:\\nju\\需求生成系统\\storage\\uploads\\e9fe9b81-546d-4915-828a-44b03ded23f2\\app.apk",
-    "original_filename": "ConverterNOW.apk",
-    "combo": "应用介绍+Activity分析",
-    "lang": "zh",
-    "result": {
-      "app_dir": "D:/nju/需求生成系统/storage/uploads/e9fe9b81-546d-4915-828a-44b03ded23f2/work/com.ferrarid.converterpro",
-      "ok": true,
-      "message": "",
-      "combo": "应用介绍+Activity分析",
-      "app": "com.ferrarid.converterpro",
-      "srs": "D:/nju/需求生成系统/Req/demo/output/应用介绍+Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro_SRS.json",
-      "tests": "D:/nju/需求生成系统/Req/demo/output/应用介绍+Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro_TestRequirements.json",
-      "test_json": "D:/nju/需求生成系统/Req/demo/output/应用介绍+Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro.json",
-      "report": "D:\\nju\\需求生成系统\\Req\\demo\\output\\应用介绍+Activity分析\\com.ferrarid.converterpro\\com.ferrarid.converterpro_功能测试报告.docx",
-      "zip": "D:\\nju\\需求生成系统\\Req\\demo\\output\\应用介绍+Activity分析\\com.ferrarid.converterpro\\com.ferrarid.converterpro_data.zip"
-    }
-  },
   "438a50dd-1eb3-411b-aaf1-1f50766ad749": {
     "job_id": "438a50dd-1eb3-411b-aaf1-1f50766ad749",
     "status": "completed",
@@ -83,6 +19,38 @@
       "test_json": "D:/nju/需求生成系统/Req/demo/output/应用介绍+Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro.json",
       "report": "D:\\nju\\需求生成系统\\Req\\demo\\output\\应用介绍+Activity分析\\com.ferrarid.converterpro\\com.ferrarid.converterpro_功能测试报告.docx",
       "zip": "D:\\nju\\需求生成系统\\Req\\demo\\output\\应用介绍+Activity分析\\com.ferrarid.converterpro\\com.ferrarid.converterpro_data.zip"
+    }
+  },
+  "b8aa4a5e-11ae-4585-af8a-11ca553c3cba": {
+    "job_id": "b8aa4a5e-11ae-4585-af8a-11ca553c3cba",
+    "status": "pending",
+    "created_at": "1768054905.3198433",
+    "file_path": "D:\\nju\\需求生成系统\\github\\storage\\uploads\\b8aa4a5e-11ae-4585-af8a-11ca553c3cba\\app.apk",
+    "original_filename": "ConverterNOW.apk",
+    "app_name": "Unknown",
+    "combo": "",
+    "lang": ""
+  },
+  "e62be835-2392-48f3-a8b7-308157d2e9d0": {
+    "job_id": "e62be835-2392-48f3-a8b7-308157d2e9d0",
+    "status": "completed",
+    "created_at": "1768055027.1638517",
+    "file_path": "D:\\nju\\需求生成系统\\github\\storage\\uploads\\e62be835-2392-48f3-a8b7-308157d2e9d0\\app.apk",
+    "original_filename": "ConverterNOW.apk",
+    "app_name": "ConverterNow",
+    "combo": "应用介绍+Activity分析",
+    "lang": "zh",
+    "result": {
+      "app_dir": "D:/nju/需求生成系统/github/storage/uploads/e62be835-2392-48f3-a8b7-308157d2e9d0/work/com.ferrarid.converterpro",
+      "ok": true,
+      "message": "",
+      "combo": "应用介绍+Activity分析",
+      "app": "com.ferrarid.converterpro",
+      "srs": "D:/nju/需求生成系统/github/Req/demo/output/应用介绍+Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro_SRS.json",
+      "tests": "D:/nju/需求生成系统/github/Req/demo/output/应用介绍+Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro_TestRequirements.json",
+      "test_json": "D:/nju/需求生成系统/github/Req/demo/output/应用介绍+Activity分析/com.ferrarid.converterpro/com.ferrarid.converterpro.json",
+      "report": "D:\\nju\\需求生成系统\\github\\Req\\demo\\output\\应用介绍+Activity分析\\com.ferrarid.converterpro\\com.ferrarid.converterpro_功能测试报告.docx",
+      "zip": "D:\\nju\\需求生成系统\\github\\Req\\demo\\output\\应用介绍+Activity分析\\com.ferrarid.converterpro\\com.ferrarid.converterpro_data.zip"
     }
   }
 }
