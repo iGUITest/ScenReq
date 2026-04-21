@@ -44,6 +44,46 @@
             cursor: not-allowed;
             transform: none;
         }
+        .editor-table {
+            table-layout: fixed;
+            min-width: 1400px;
+        }
+        .editor-input {
+            width: 100%;
+            min-width: 120px;
+        }
+        .editor-textarea {
+            width: 100%;
+            min-height: 88px;
+            resize: vertical;
+        }
+        .editor-col-id {
+            width: 90px;
+        }
+        .editor-col-name {
+            width: 180px;
+        }
+        .editor-col-type {
+            width: 120px;
+        }
+        .editor-col-action {
+            width: 70px;
+        }
+        .editor-col-requirement {
+            width: 640px;
+        }
+        .editor-col-desc {
+            width: 320px;
+        }
+        .editor-col-obj {
+            width: 280px;
+        }
+        .editor-col-data {
+            width: 220px;
+        }
+        .editor-col-expected {
+            width: 360px;
+        }
         /* Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -129,6 +169,13 @@
                 :class="currentTab === 'history' ? 'active' : 'inactive'"
             >
                 {{ t('tabHistory') }}
+            </button>
+            <button
+                @click="fetchHistory(); currentTab = 'editor'"
+                class="tab-btn"
+                :class="currentTab === 'editor' ? 'active' : 'inactive'"
+            >
+                {{ t('tabEditor') }}
             </button>
         </div>
 
@@ -345,6 +392,19 @@
                                 <div v-if="job.status === 'completed'" class="flex space-x-3">
                                     <a :href="getDownloadLink(job.job_id, 'report')" target="_blank" class="text-blue-400 hover:text-blue-300 text-xs">Report</a>
                                     <a :href="getDownloadLink(job.job_id, 'zip')" target="_blank" class="text-blue-400 hover:text-blue-300 text-xs">Zip</a>
+                                    <button
+                                        @click="manualSyncJob(job)"
+                                        :disabled="isManualSyncing(job.job_id)"
+                                        class="text-emerald-400 hover:text-emerald-300 text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+                                    >
+                                        {{ isManualSyncing(job.job_id) ? t('syncing') : t('syncJson') }}
+                                    </button>
+                                    <button
+                                        @click="openEditor(job)"
+                                        class="text-cyan-400 hover:text-cyan-300 text-xs"
+                                    >
+                                        {{ t('editOnline') }}
+                                    </button>
                                 </div>
                                 <span v-else class="text-gray-500 text-xs">-</span>
                             </td>
@@ -354,6 +414,130 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <!-- ONLINE EDITOR TAB -->
+        <div v-if="currentTab === 'editor'">
+            <div class="glass-panel p-6 shadow-2xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-white">{{ t('editorTitle') }}</h2>
+                    <button @click="fetchHistory" class="text-indigo-300 hover:text-white text-sm">{{ t('refresh') }} ↻</button>
+                </div>
+
+                <div v-if="!editorJobId" class="text-sm text-gray-300 mb-4">{{ t('editorSelectHint') }}</div>
+
+                <div v-if="!editorJobId" class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="text-indigo-200 border-b border-white/10 text-sm">
+                                <th class="py-3 px-4">{{ t('thTime') }}</th>
+                                <th class="py-3 px-4">{{ t('thApp') }}</th>
+                                <th class="py-3 px-4">{{ t('thStatus') }}</th>
+                                <th class="py-3 px-4">{{ t('thAction') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr v-for="job in historyList.filter(j => j.status === 'completed')" :key="`editor-${job.job_id}`" class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                                <td class="py-3 px-4 text-gray-300">{{ formatTime(job.created_at) }}</td>
+                                <td class="py-3 px-4 text-white font-medium">{{ job.app_name || job.original_filename }}</td>
+                                <td class="py-3 px-4 text-green-400">{{ job.status }}</td>
+                                <td class="py-3 px-4">
+                                    <button @click="openEditor(job)" class="text-cyan-400 hover:text-cyan-300 text-xs">{{ t('editOnline') }}</button>
+                                </td>
+                            </tr>
+                            <tr v-if="historyList.filter(j => j.status === 'completed').length === 0">
+                                <td colspan="4" class="py-8 text-center text-gray-400">{{ t('noHistory') }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div v-if="editorJobId">
+                    <div class="mb-4 flex items-center justify-between">
+                        <div>
+                            <div class="text-sm text-indigo-200">JOB ID</div>
+                            <div class="font-mono text-white text-sm">{{ editorJobId }}</div>
+                            <div class="text-xs text-gray-400 mt-1">{{ editorReportName }}</div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button @click="addSrsRow" class="px-3 py-2 rounded bg-indigo-700/70 text-xs text-white hover:bg-indigo-600">{{ t('addSrs') }}</button>
+                            <button @click="addTestRow" class="px-3 py-2 rounded bg-indigo-700/70 text-xs text-white hover:bg-indigo-600">{{ t('addTest') }}</button>
+                            <button @click="saveEditor" :disabled="editorSaving" class="btn-primary px-4 py-2 rounded text-sm font-bold text-white disabled:opacity-50 disabled:cursor-not-allowed">{{ editorSaving ? t('saving') : t('saveAndSync') }}</button>
+                            <button @click="closeEditor" class="px-3 py-2 rounded text-xs text-indigo-200 hover:bg-white/10">{{ t('closeEditor') }}</button>
+                        </div>
+                    </div>
+
+                    <div class="text-xs text-gray-400 mb-3">{{ t('editorHint') }}</div>
+
+                    <div class="mb-6 overflow-x-auto">
+                        <h3 class="text-white font-semibold mb-2">SRS</h3>
+                        <table class="w-full text-left border-collapse text-sm editor-table">
+                            <colgroup>
+                                <col class="editor-col-id" />
+                                <col class="editor-col-name" />
+                                <col class="editor-col-requirement" />
+                                <col class="editor-col-type" />
+                                <col class="editor-col-action" />
+                            </colgroup>
+                            <thead>
+                                <tr class="text-indigo-200 border-b border-white/10">
+                                    <th class="py-2 px-2">ID</th>
+                                    <th class="py-2 px-2">Name</th>
+                                    <th class="py-2 px-2">Requirement</th>
+                                    <th class="py-2 px-2">Type</th>
+                                    <th class="py-2 px-2">{{ t('thAction') }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(row, idx) in editorSrsRows" :key="`srs-${idx}`" class="border-b border-white/5">
+                                    <td class="p-2"><input v-model="row.id" class="form-input editor-input px-2 py-1 rounded text-xs" /></td>
+                                    <td class="p-2"><input v-model="row.name" class="form-input editor-input px-2 py-1 rounded text-xs" /></td>
+                                    <td class="p-2"><textarea v-model="row.requirement" rows="4" class="form-input editor-textarea px-2 py-1 rounded text-xs"></textarea></td>
+                                    <td class="p-2"><input v-model="row.type" class="form-input editor-input px-2 py-1 rounded text-xs" /></td>
+                                    <td class="p-2"><button @click="removeSrsRow(idx)" class="text-red-400 hover:text-red-300 text-xs">{{ t('deleteRow') }}</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <h3 class="text-white font-semibold mb-2">Tests</h3>
+                        <table class="w-full text-left border-collapse text-sm editor-table">
+                            <colgroup>
+                                <col class="editor-col-id" />
+                                <col class="editor-col-name" />
+                                <col class="editor-col-desc" />
+                                <col class="editor-col-obj" />
+                                <col class="editor-col-data" />
+                                <col class="editor-col-expected" />
+                                <col class="editor-col-action" />
+                            </colgroup>
+                            <thead>
+                                <tr class="text-indigo-200 border-b border-white/10">
+                                    <th class="py-2 px-2">ID</th>
+                                    <th class="py-2 px-2">Name</th>
+                                    <th class="py-2 px-2">Description</th>
+                                    <th class="py-2 px-2">Objective</th>
+                                    <th class="py-2 px-2">Test Data</th>
+                                    <th class="py-2 px-2">Expected</th>
+                                    <th class="py-2 px-2">{{ t('thAction') }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(row, idx) in editorTestRows" :key="`test-${idx}`" class="border-b border-white/5">
+                                    <td class="p-2"><input v-model="row.id" class="form-input editor-input px-2 py-1 rounded text-xs" /></td>
+                                    <td class="p-2"><input v-model="row.name" class="form-input editor-input px-2 py-1 rounded text-xs" /></td>
+                                    <td class="p-2"><textarea v-model="row.description" rows="3" class="form-input editor-textarea px-2 py-1 rounded text-xs"></textarea></td>
+                                    <td class="p-2"><textarea v-model="row.objective" rows="3" class="form-input editor-textarea px-2 py-1 rounded text-xs"></textarea></td>
+                                    <td class="p-2"><textarea v-model="row.test_data" rows="3" class="form-input editor-textarea px-2 py-1 rounded text-xs"></textarea></td>
+                                    <td class="p-2"><textarea v-model="row.expected_result" rows="3" class="form-input editor-textarea px-2 py-1 rounded text-xs"></textarea></td>
+                                    <td class="p-2"><button @click="removeTestRow(idx)" class="text-red-400 hover:text-red-300 text-xs">{{ t('deleteRow') }}</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -379,6 +563,14 @@
 
                 // History
                 const historyList = ref([]);
+                const manualSyncLoadingMap = ref({});
+
+                // Online editor state
+                const editorJobId = ref('');
+                const editorReportName = ref('');
+                const editorSrsRows = ref([]);
+                const editorTestRows = ref([]);
+                const editorSaving = ref(false);
                 
                 const form = ref({
                     apiKey: '', // Deprecated in UI but kept for compatibility
@@ -419,6 +611,7 @@
                         download: '下载',
                         tabGenerate: '新任务',
                         tabHistory: '历史记录',
+                        tabEditor: '在线编辑',
                         historyTitle: '任务历史',
                         refresh: '刷新',
                         thTime: '时间',
@@ -427,6 +620,23 @@
                         thStatus: '状态',
                         thAction: '操作',
                         noHistory: '暂无历史记录',
+                        editOnline: '在线编辑',
+                        editorTitle: '在线编辑 Word 内容',
+                        editorSelectHint: '请选择一个已完成任务进行在线编辑。',
+                        editorHint: '保存后会先更新 Word 报告，再自动同步到 SRS/TestRequirements JSON。',
+                        addSrs: '新增SRS行',
+                        addTest: '新增测试行',
+                        deleteRow: '删除',
+                        saveAndSync: '保存并同步JSON',
+                        saving: '保存中...',
+                        closeEditor: '关闭编辑',
+                        editorLoadFailed: '加载编辑数据失败',
+                        editorSaveDone: 'Word 已保存并完成 JSON 同步',
+                        syncJson: '同步JSON',
+                        syncing: '同步中...',
+                        syncDone: 'Word 修改已同步回 JSON',
+                        syncFailed: '同步失败',
+                        syncNoReport: '该任务缺少报告路径，无法同步',
                         taskSubmitted: '任务已提交至后台',
                         checkHistory: '请前往历史记录查看进度',
                         ok: '好的'
@@ -459,6 +669,7 @@
                         download: 'Download',
                         tabGenerate: 'New Task',
                         tabHistory: 'History',
+                        tabEditor: 'Online Editor',
                         historyTitle: 'Task History',
                         refresh: 'Refresh',
                         thTime: 'Time',
@@ -467,6 +678,23 @@
                         thStatus: 'Status',
                         thAction: 'Action',
                         noHistory: 'No history found',
+                        editOnline: 'Edit Online',
+                        editorTitle: 'Edit Word Content Online',
+                        editorSelectHint: 'Select a completed job to edit online.',
+                        editorHint: 'Save will update the Word report first, then sync SRS/TestRequirements JSON.',
+                        addSrs: 'Add SRS Row',
+                        addTest: 'Add Test Row',
+                        deleteRow: 'Delete',
+                        saveAndSync: 'Save and Sync JSON',
+                        saving: 'Saving...',
+                        closeEditor: 'Close',
+                        editorLoadFailed: 'Failed to load editor data',
+                        editorSaveDone: 'Word saved and JSON synced',
+                        syncJson: 'Sync JSON',
+                        syncing: 'Syncing...',
+                        syncDone: 'Word edits synced back to JSON',
+                        syncFailed: 'Sync failed',
+                        syncNoReport: 'Report path is missing for this job',
                         taskSubmitted: 'Task submitted to background',
                         checkHistory: 'Please check history for progress',
                         ok: 'OK'
@@ -632,6 +860,120 @@
                     result.value = null;
                 };
 
+                const isManualSyncing = (jobId) => {
+                    return Boolean(manualSyncLoadingMap.value[jobId]);
+                };
+
+                const manualSyncJob = async (job) => {
+                    if (!job || !job.result || !job.result.report) {
+                        alert(t('syncNoReport'));
+                        return;
+                    }
+
+                    manualSyncLoadingMap.value[job.job_id] = true;
+
+                    try {
+                        const res = await fetch('/api/manual-edit/sync', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                job_id: job.job_id
+                            })
+                        });
+                        const data = await res.json();
+
+                        if (!res.ok || data.ok === false) {
+                            throw new Error(data.detail || data.message || t('syncFailed'));
+                        }
+
+                        alert(`${t('syncDone')}\nSRS: ${data.srs_updated}/${data.srs_count}\nTests: ${data.tests_updated}/${data.tests_count}`);
+                    } catch (e) {
+                        alert(`${t('syncFailed')}: ${e.message || e}`);
+                    } finally {
+                        manualSyncLoadingMap.value[job.job_id] = false;
+                    }
+                };
+
+                const openEditor = async (job) => {
+                    if (!job || job.status !== 'completed') return;
+
+                    try {
+                        const res = await fetch(`/api/manual-edit/editor/${job.job_id}`);
+                        const data = await res.json();
+                        if (!res.ok || data.ok === false) {
+                            throw new Error(data.detail || data.message || t('editorLoadFailed'));
+                        }
+
+                        editorJobId.value = job.job_id;
+                        editorReportName.value = data.report_name || '';
+                        editorSrsRows.value = (data.srs_rows || []).map((r) => ({
+                            id: r.id || '',
+                            name: r.name || '',
+                            requirement: r.requirement || '',
+                            type: r.type || ''
+                        }));
+                        editorTestRows.value = (data.test_rows || []).map((r) => ({
+                            id: r.id || '',
+                            name: r.name || '',
+                            description: r.description || '',
+                            objective: r.objective || '',
+                            test_data: r.test_data || '',
+                            expected_result: r.expected_result || ''
+                        }));
+                        currentTab.value = 'editor';
+                    } catch (e) {
+                        alert(`${t('editorLoadFailed')}: ${e.message || e}`);
+                    }
+                };
+
+                const closeEditor = () => {
+                    editorJobId.value = '';
+                    editorReportName.value = '';
+                    editorSrsRows.value = [];
+                    editorTestRows.value = [];
+                };
+
+                const addSrsRow = () => {
+                    editorSrsRows.value.push({ id: '', name: '', requirement: '', type: '' });
+                };
+
+                const removeSrsRow = (idx) => {
+                    editorSrsRows.value.splice(idx, 1);
+                };
+
+                const addTestRow = () => {
+                    editorTestRows.value.push({ id: '', name: '', description: '', objective: '', test_data: '', expected_result: '' });
+                };
+
+                const removeTestRow = (idx) => {
+                    editorTestRows.value.splice(idx, 1);
+                };
+
+                const saveEditor = async () => {
+                    if (!editorJobId.value) return;
+                    editorSaving.value = true;
+                    try {
+                        const res = await fetch('/api/manual-edit/editor/save', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                job_id: editorJobId.value,
+                                srs_rows: editorSrsRows.value,
+                                test_rows: editorTestRows.value
+                            })
+                        });
+                        const data = await res.json();
+                        if (!res.ok || data.ok === false) {
+                            throw new Error(data.detail || data.message || t('syncFailed'));
+                        }
+                        alert(`${t('editorSaveDone')}\nSRS: ${data.srs_updated}/${data.srs_count}\nTests: ${data.tests_updated}/${data.tests_count}`);
+                    } catch (e) {
+                        alert(`${t('syncFailed')}: ${e.message || e}`);
+                    } finally {
+                        editorSaving.value = false;
+                    }
+                };
+
                 const getDownloadLink = (jobId, type) => {
                     return `/api/download/${jobId}/${type}`;
                 };
@@ -661,7 +1003,21 @@
                     getDownloadLink,
                     saveGlobalApiKey,
                     fetchHistory,
-                    formatTime
+                    formatTime,
+                    isManualSyncing,
+                    manualSyncJob,
+                    openEditor,
+                    closeEditor,
+                    addSrsRow,
+                    removeSrsRow,
+                    addTestRow,
+                    removeTestRow,
+                    saveEditor,
+                    editorJobId,
+                    editorReportName,
+                    editorSrsRows,
+                    editorTestRows,
+                    editorSaving
                 };
             }
         }).mount('#app');
