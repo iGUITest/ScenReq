@@ -355,9 +355,9 @@ def main():
         print("[1/6] 使用已存在的反编译目录，跳过反编译。")
         res = process_existing_app(app_dir, output_root)
         if res.get("ok"):
-            print("✅ 全流程完成！")
+            print("[OK] 全流程完成！")
             return
-        print(f"❌ 失败：{res.get('message')}")
+        print(f"[ERR] 失败：{res.get('message')}")
         sys.exit(1)
 
     apk_path = args.apk

@@ -1,0 +1,52 @@
+{
+    "apps": [
+        {
+            "id": "A1",
+            "name": "com.ferrarid.converterpro",
+            "package": "com.ferrarid.converterpro",
+            "launch-activity": "com.ferrarid.converterpro.MainActivity"
+        }
+    ],
+    "scenarios": [
+        {
+            "id": "S_输入为空时触发校验提示_001",
+            "name": "输入为空时触发校验提示",
+            "description": "用户在主界面的输入框中未输入任何内容，直接点击转换按钮",
+            "extra-info": {
+                "value": "无"
+            }
+        },
+        {
+            "id": "S_输入仅含空白字符时触发校验提示_002",
+            "name": "输入仅含空白字符时触发校验提示",
+            "description": "用户在主界面输入框中输入多个空格、制表符及换行符后点击转换按钮",
+            "extra-info": {
+                "value": "输入值：\"\\t \\n  \""
+            }
+        },
+        {
+            "id": "S_输入包含不可见控制字符时触发校验提示_003",
+            "name": "输入包含不可见控制字符时触发校验提示",
+            "description": "用户在主界面输入框中粘贴含ASCII控制字符（如BEL、ESC）的内容后点击转换按钮",
+            "extra-info": {
+                "value": "输入值：\"abc\\u0007\\u001bdef\""
+            }
+        },
+        {
+            "id": "S_输入超长字符串时触发长度限制提示_004",
+            "name": "输入超长字符串时触发长度限制提示",
+            "description": "用户在主界面输入框中输入超过2000个字符的文本后点击转换按钮",
+            "extra-info": {
+                "value": "输入值：\"A\"重复2001次"
+            }
+        },
+        {
+            "id": "S_输入合法内容时校验通过并允许转换_005",
+            "name": "输入合法内容时校验通过并允许转换",
+            "description": "用户在主界面输入框中输入符合格式要求的英文数字混合字符串（如'123abc'），点击转换按钮",
+            "extra-info": {
+                "value": "输入值：\"123abc\""
+            }
+        }
+    ]
+}

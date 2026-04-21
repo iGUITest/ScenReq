@@ -1,0 +1,1678 @@
+[
+    {
+        "activity": "OldDetectActivityActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WebActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CustomCameraActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CustomCameraActivityNew",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ScanPayH5Container",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ScanPayActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ThirdPayActivity",
+        "function": "ThirdPayActivity 是一个支付页面，用户可以在此完成第三方支付操作。主要任务包括输入支付信息、确认支付等。关键交互有输入框（如支付金额）、按钮（如确认支付）等。用户输入支付相关信息后，期望能够顺利完成支付并收到支付成功的提示。"
+    },
+    {
+        "activity": "ThirdPayActivity2",
+        "function": "ThirdPayActivity2 是一个支付页面，用户可以在此页面完成第三方支付操作。主要任务包括选择支付方式、确认支付金额和完成支付。关键交互可能涉及点击支付按钮、输入支付密码或验证信息。用户期望的结果是顺利完成支付并收到支付成功的提示。"
+    },
+    {
+        "activity": "UnionPayActivity",
+        "function": "UnionPayActivity 主要用于处理银联支付流程。用户可以在此页面完成支付操作，输入支付相关信息，并通过按钮提交支付请求。页面可能包含输入框供用户填写支付信息，如银行卡号、密码等。支付成功或失败后，会显示相应的提示信息。用户期望的结果是顺利完成支付并收到确认消息。"
+    },
+    {
+        "activity": "UniWalletPayActivity",
+        "function": "UniWalletPayActivity 是一个支付页面，用户可以在此页面完成使用 UniWallet 进行支付的操作。主要任务包括输入支付金额、确认支付信息等。关键交互有支付按钮和可能的输入框。用户点击支付按钮后，系统会处理支付请求，并在支付成功后显示支付成功的提示，或在失败时给出相应的错误信息。"
+    },
+    {
+        "activity": "CmbPayActivity",
+        "function": "CmbPayActivity 是一个支付相关的页面，用户可以在此完成招商银行的支付操作。主要任务包括处理支付响应、展示支付结果等。关键交互可能涉及确认支付、返回上一页等按钮。用户输入支付信息后，期望看到支付成功或失败的结果，并能够根据结果进行下一步操作，如返回订单页或重新支付。"
+    },
+    {
+        "activity": "QQWalletPayProxyActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SettingCtripPayTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CardIOActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DataEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripPayActivity",
+        "function": "CtripPayActivity 是一个支付相关的页面，用户可以在此页面完成支付操作。主要任务包括输入支付信息、确认支付等。关键交互有输入框（如支付金额、银行卡信息）、按钮（如确认支付、返回）。用户期望的结果是顺利完成支付流程，并收到支付成功的提示。"
+    },
+    {
+        "activity": "CtripPayActivity2",
+        "function": "CtripPayActivity2 主要用于处理携程支付流程。用户可以在此页面完成支付操作，可能包括输入支付密码、选择支付方式等关键交互。页面上可能会有确认支付、取消支付等按钮。用户期望的结果是顺利完成支付并收到支付成功的提示。"
+    },
+    {
+        "activity": "CtripAliPayCallBackActivity",
+        "function": "该页面主要用于处理支付宝支付回调。用户在此流程中无需进行任何操作，页面会自动读取支付结果并根据结果完成相应处理后关闭。主要任务是接收并解析支付结果链接，然后调用相关控制器处理支付结果，并记录日志。最终页面会自动关闭，用户期望的结果是支付成功或失败的提示。"
+    },
+    {
+        "activity": "CtripUniWallerCallBackActivity",
+        "function": "该页面主要用于处理UniWallet支付结果的回调。用户在此页面上无需进行任何操作，页面会自动获取并解析支付结果数据，然后根据结果完成相应的处理（如显示支付成功或失败的信息），最后自动关闭页面返回到之前的界面。"
+    },
+    {
+        "activity": "AlipayResultActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "QRCodeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PayActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "UPPayWapActivity",
+        "function": "该页面主要用于银联支付操作。用户可以在此页面完成支付流程，包括输入支付相关信息、确认支付等步骤。页面可能包含输入框供用户填写支付信息，以及按钮用于提交支付请求或取消操作。用户期望的结果是顺利完成支付，并收到支付成功的提示。此外，页面还可能显示对话框以确认用户的某些操作或展示支付结果。"
+    },
+    {
+        "activity": "AssistActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "AuthActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "H5Container",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "H5Container",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "H5PreRender",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "MktH5ContainerV2",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "H5Setting",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "H5TestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "H5LogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CacheUtilTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TourLogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TourLogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FileBrowser",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FileBrowser",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WebDAVServerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelUrlSchameTestingActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelUrlSchemaTestingDetailActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripBirthDialogWithLimite",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelFatDataMockActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelUIActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelToastyActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelAiRobotActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelUIDialogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelAutoTestCookieConfigActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelUIButtonActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelUIFilterActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelUIOtherActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelUITitleActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelUIBannerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripSplashActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripHoldActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripBridgeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GlobalHomeSearchActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GsSearchActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "AiSearchActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VoipDialingActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VoipHistoryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VoipReceiveActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "AgingHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripBootActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripARMapActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripARActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ScheduleLoadCalendarActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ScheduleNewFilterGuide",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ScheduleFilterPersonalActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ScheduleWrapperActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ScheduleDebugSettingActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TripFlutterActivity",
+        "function": "TripFlutterActivity 是一个用于处理旅行相关功能的页面，用户可以在此页面上完成如查看行程、预订服务等任务。页面可能包含按钮或输入框供用户进行交互，例如选择日期、填写个人信息等。用户操作后，页面会显示相应的旅行信息或确认预订的结果。此外，该页面支持透明背景模式，并能根据需要调整主题样式。"
+    },
+    {
+        "activity": "TripFlutterActivityForMultiEngine",
+        "function": "[请求失败] HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Read timed out. (read timeout=300)"
+    },
+    {
+        "activity": "TripFlutterProfileSupportActivity",
+        "function": "该页面主要用于展示和处理与用户个人旅行资料相关的Flutter界面。用户可以查看和编辑个人信息，如姓名、联系方式等。页面可能包含返回按钮以关闭当前界面。用户期望的结果是能够顺利查看和更新个人资料，并在完成后返回到上一个页面或主界面。"
+    },
+    {
+        "activity": "TripFlutterLoadingActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TransparentTripFlutterActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripFragmentHolderActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNBaseActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNTransparentActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNBaseActivityForFoldTrans",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNTransparentActivityForFoldTrans",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNBaseActivityChanges",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNBaseActivityV2",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNBaseActivityV2ForFold",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNTransparentActivityV2",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNTransparentActivityV2ForFold",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNBaseActivityV2ForFoldFullScreen",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNTransparentActivityV2ForFoldFullScreen",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNBaseActivityV2ForFoldTrans",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNTransparentActivityV2ForFoldTrans",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ReactFragmentHolderActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlightDynamicFloatLoadingActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelInquireActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelRNModalActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelRNModalPlainActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelDetailActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelDetailCharityProjectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelVideoActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelCommentListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PermissionHelper",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelMyHotelBrowseListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelFlagShipLoginActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelDetailMapActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelListMapActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelListMixMapActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelListMixMapFoldActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelAroundMixMapActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelPerformenceReportActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelAnalyzerResultActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelAnalyzerFullDrawReportResult",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelSettingAllInOne",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelUrlLoginActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelShowGoogleMap",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "BluetoothEnabler",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelCommentErrorActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TrainSettingActivityV2",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TrainContainerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTTourSearchActivity2",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTTourHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTourTangHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTSingleChatActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTGroupChatActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTRobotGroupActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTGroupDetailSetActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TestRobotActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LatestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ShortCutMsgActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VLeaderChatListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SpareActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GroupChooseActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTTourSearchActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlightRNFloatLayerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlightInquireActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlightMainCityListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlightMeasureLuggageMainActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlightMeasureLuggageMainActivityProxy",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlightPageH5Container",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlightMaskH5Container",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlightHalfMaskH5Container",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "QRScanActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "QRScanHistoryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CardScanLocalSelActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ScanNoFrameActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ScanConfirmActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SlideCheckActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "BindExecuteActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ChineseTranslateActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "MyCtripOrderModalActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "MyCtripHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ThirdLoginBaseActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "BaiduAuthorizeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WeiBoEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "QQSSOEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "QQEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WeiboEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "BaiduAuthActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "QQAuthorizeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SettingActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SettingCtripIpConfigActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DebugDetailURLConfigActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TcpTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTLogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNDebugActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNPreloadV2DemoActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DebugBlockActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNDebugActivityV2",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LocationShowActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "UBTTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "NativeAdSdkTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "NewFunctionActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FAQListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelOrderDetailCommonOperationActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "OrderBookingGiftPacksDetailActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripLoginActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripLoginContainer",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CommonAuthorizeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CommonSimpleLoginActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTCitySelectorActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CitySelectorActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripLowPriceTransitActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "BindQunaerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTCountryCodesSelActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTNationalitySelActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CommonFragmentActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GSGenericFragmentActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GSHybridPageActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GsCommentPhotoEditActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GSCommonAdjustResizeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GSAllMapActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VideoRecordActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VideoTrimActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "MultiSelectImageActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ImageAlbumSelectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GSHomePlusActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GsTravelShotPublishActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "MediaSelectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GsTsPublishOptionActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GsTravelShootVideoTrimActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GSSingleHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GsTsUploadVideoActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GsVideoTemplateEditActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GsTemplatePreviewActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GsGraphicTemplatePreviewActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PluginLoaderActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelOrderCrashBackOrGuaranteeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "AbstractController",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "IntentUriHandlerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "MktTaskMiddlePageActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "AiScanActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WXEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WXPayEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ToThirdSimBindActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ToThirdAccountBindActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ToThirdOtherBindActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WOPlusRegistBindActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "InvoiceTitleListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripCommonFeedBackActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripCommonFeedBackGuideActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripPlantHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripPlantHomeActivityForFold",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CarPlantHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "AirportCarPlantHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "RentalCarPlantHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "StreetScenicActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ImagePickerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CropImage",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CameraActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SimpleOverseaMapActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripBaiduMapActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripBaiduMapMockActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripGoogleMapMockActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripUnitedMapMockActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TTFFontTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TestAppJumpActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "JavaLeakTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ActivityLeakMaker$LeakedActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TestContinuousLocationActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TestStorageActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FindSimilarHotelActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WBSinaEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TencentEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SMSEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "EmailEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CallActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CommonInfoActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CommonInfoEditActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GalleryActivityTest",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripCameraActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TranslateMainActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TranslateDoActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TranseResultFullScreenActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TranslateCameraActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripVRActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VideoGoodsActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VideoGoodsMultiContainerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FloatWindowActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LivePlayerHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "EmoticonKeyboardHomeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "EmoticonKeyboardContentActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "EmoticonKeyboardDialogContentActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HomeRealTimeIntentTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SettingDbDetailForOtherRemarkSpecialOfferActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelMockServerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelLogServiceDetailActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelServiceFuseActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelServiceFuseBlanklistActivty",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelIncrementActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelMockLocationActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelMockListPreloadFromGlobalSearchActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelLogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelLogActivityv2",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelLogDetailActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelSettingActivty",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "NavToolsActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "MapFullScreenActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelRNConfigActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelDetailURLConfigActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelRNUrlEditActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelConfigurationActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelLookingActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelRNActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelSwitchActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelRnMockUrlModificationActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelIpSetConfigActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelSingleServiceEnvSetConfigActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelABTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SettingDbForCityListVersionMainActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SettingDbForOtherReamrkSpecialOfferMainActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SettingDbTowBtnActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelForFlightActivty",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelPhotoViewActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelAlbumBrowseActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ABTestingListSettingActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ABTestingListSettingActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DevSettingsActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "H5AuthActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "AuthActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "QAuthEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlutterFragmentActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ConfigTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ImageInspectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "AccessibleFontActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "AccessibleFontHoldActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ReferTestMainActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DevToolTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LocationDebugActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PassengerPickTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LottieActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WatchTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CitySelectorTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HomeDebugActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "InAppNotificationDebugActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LocationGuideTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ImageEditTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SideToolBoxTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlowViewTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VideoPlayerTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VideoGoodsConfigActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VideoGoodsWidgetTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "VideoUploadTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LogCenterActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CitySwitchTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CRNSettingCtripIpActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LiveConfigActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripNetworkDebugActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripAppLinkActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "BlankTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DevToolsActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DevToolsFileBrowserActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WebDAVServerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CtripMemoryleakActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SenseTimeTestActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "RemotePluginLoadActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "RemoteSDKLoadActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelRNDialogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TrainDouYinLoginActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TrainDouYinShareActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "H5FaceVerifyActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "H5PayActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PayResultActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "H5OpenAuthActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "APayEntranceActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CMBApiEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WebActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ShareTransActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "NotificationClickedActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "InstallActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PlayCoreMissingSplitsActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PlayCoreDialogWrapperActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PermissionActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTPermissionHelper$HuaweiPermissionFoldCompactActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTPdfBrowserActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GalleryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GalleryV2Activity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PhotoViewDetailActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PhotoViewDetailNotTransparentActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GalleryDetailActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTMultipleVideoEditorActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTVideoCoverSelectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PicSelectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CropImageViewActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CameraFilterActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TakePhotoPreviewActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTImageEditActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTVideoRecordActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTVideoEditorActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SystemCameraHoldActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "SystemImagePickerHoldActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTVideoPlayerActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CTMultipleImagesEditActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CalendarSelectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CalendarPageSelectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "EvaluateDialogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlightNationListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "MainAuthActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LandMainAuthActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DouYinWebAuthorizeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DouYinSDKEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelChangeQuantityPersonNumActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelFlutterModalActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelDialogStyleDetailPageActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelPriceStarDialogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ComponentFilterActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelBottomSheetActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelListFloatActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "HotelListFloatFoldActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LiveRoomActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "TripPayActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LoadingActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ActionLivenessActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FlashLivenessActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ActionFlashLivenessActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DistanceFlashDetectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "GrantActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "UserAgreementActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "NFCDetectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "DetectActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WebActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PayMiddlePayEntryActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ConsoleMobileConfigListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ConsoleFileListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ConsoleABTestingListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ConsoleStorageListActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ConsolePackageActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PhoneNumberVerifyActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ChatActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LLMChatActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LocChooseActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LocShowActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "FilePreviewActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "LoadingDialogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "IMDialogActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ChatFloatingWebView",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ChatFloatingCRN",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "CFHyWebActivityV2",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WDFullScreenActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "WendaoDebugActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "ARRecognizeActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    },
+    {
+        "activity": "PermissionTransparentActivity",
+        "function": "[-] 无法读取合并方法文本，跳过分析。"
+    }
+]

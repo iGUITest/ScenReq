@@ -1,0 +1,47 @@
+[
+  {
+    "id": "FR-001",
+    "name": "单位转换-聚合意图",
+    "requirement": "系统应支持‘单位转换’相关流程，用户可从入口‘com.ferrarid.converterpro’触发操作，并在流程完成后获得明确可见结果（置信度: 0.92）。",
+    "type": "功能性",
+    "evidence_refs": [
+      "INT-001"
+    ]
+  },
+  {
+    "id": "FR-002",
+    "name": "属性选择与排序-聚合意图",
+    "requirement": "系统应支持‘属性选择与排序’相关流程，用户可从入口‘com.ferrarid.converterpro’触发操作，并在流程完成后获得明确可见结果（置信度: 0.74）。",
+    "type": "功能性",
+    "evidence_refs": [
+      "INT-004"
+    ]
+  },
+  {
+    "id": "FR-003",
+    "name": "单位选择与隐藏-聚合意图",
+    "requirement": "系统应支持‘单位选择与隐藏’相关流程，用户可从入口‘com.ferrarid.converterpro’触发操作，并在流程完成后获得明确可见结果（置信度: 0.68）。",
+    "type": "功能性",
+    "evidence_refs": [
+      "INT-005"
+    ]
+  },
+  {
+    "id": "FR-004",
+    "name": "系统设置-聚合意图",
+    "requirement": "系统应支持‘系统设置’相关流程，用户可从入口‘com.ferrarid.converterpro’触发操作，并在流程完成后获得明确可见结果（置信度: 0.62）。",
+    "type": "功能性",
+    "evidence_refs": [
+      "INT-006"
+    ]
+  },
+  {
+    "id": "FR-005",
+    "name": "货币汇率换算-聚合意图",
+    "requirement": "系统应支持‘货币汇率换算’相关流程，用户可从入口‘com.ferrarid.converterpro’触发操作，并在流程完成后获得明确可见结果（置信度: 0.56）。",
+    "type": "功能性",
+    "evidence_refs": [
+      "INT-003"
+    ]
+  }
+]

@@ -41,7 +41,7 @@ def save_results(result):
     with open(test_file, 'w', encoding='utf-8') as f:
         json.dump(test_data, f, ensure_ascii=False, indent=4)
 
-    print(f"✅ 文件已保存：\n - {srs_file}\n - {test_file}\n")
+    print(f"[OK] 文件已保存：\n - {srs_file}\n - {test_file}\n")
     return app_name, srs_file, test_file
 
 

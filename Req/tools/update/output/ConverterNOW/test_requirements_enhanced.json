@@ -1,0 +1,302 @@
+[
+  {
+    "id": "TC-001",
+    "name": "验证单位转换-聚合意图-正常流程",
+    "description": "验证用户在标准输入和标准路径下可完成核心功能。",
+    "objective": "验证单位转换功能在正常流程可执行且结果正确。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-001; scenario=正常流程",
+    "steps": [
+      "1. 进入单位转换页面",
+      "2. 选择源单位与目标单位",
+      "3. 输入待转换数值",
+      "4. 执行转换",
+      "5. 校验结果数值"
+    ],
+    "test_data": {},
+    "expected_result": "功能执行成功并给出可见反馈。",
+    "success_criteria": "关键步骤全部可执行，结果与预期一致。",
+    "evidence_refs": [
+      "INT-001"
+    ]
+  },
+  {
+    "id": "TC-002",
+    "name": "验证单位转换-聚合意图-边界输入",
+    "description": "验证极大值、极小值、负值和小数输入时转换稳定性。",
+    "objective": "验证单位转换功能在边界输入下行为稳定且可解释。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-001; scenario=边界输入",
+    "steps": [
+      "1. 进入单位转换页面",
+      "2. 选择源单位与目标单位",
+      "3. 输入待转换数值",
+      "4. 执行转换",
+      "5. 校验结果数值"
+    ],
+    "test_data": {},
+    "expected_result": "系统对边界输入给出稳定响应，不崩溃并返回明确结果或提示。",
+    "success_criteria": "无崩溃、无卡死、边界输入结果可解释。",
+    "evidence_refs": [
+      "INT-001"
+    ]
+  },
+  {
+    "id": "TC-003",
+    "name": "验证单位转换-聚合意图-异常路径",
+    "description": "验证无效输入或异常状态下的错误处理与提示能力。",
+    "objective": "验证单位转换功能在异常路径下提示清晰且可恢复。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-001; scenario=异常路径",
+    "steps": [
+      "1. 进入单位转换页面",
+      "2. 选择源单位与目标单位",
+      "3. 输入待转换数值",
+      "4. 执行转换",
+      "5. 校验结果数值"
+    ],
+    "test_data": {},
+    "expected_result": "系统给出清晰错误提示，流程可回退或重试，不出现未处理异常。",
+    "success_criteria": "错误提示清晰、可恢复、无未处理异常。",
+    "evidence_refs": [
+      "INT-001"
+    ]
+  },
+  {
+    "id": "TC-004",
+    "name": "验证属性选择与排序-聚合意图-正常流程",
+    "description": "验证用户在标准输入和标准路径下可完成核心功能。",
+    "objective": "验证属性选择与排序功能在正常流程可执行且结果正确。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-004; scenario=正常流程",
+    "steps": [
+      "1. 进入属性管理页面",
+      "2. 选择需要显示的属性",
+      "3. 调整属性顺序",
+      "4. 保存配置",
+      "5. 校验首页展示顺序"
+    ],
+    "test_data": {},
+    "expected_result": "功能执行成功并给出可见反馈。",
+    "success_criteria": "关键步骤全部可执行，结果与预期一致。",
+    "evidence_refs": [
+      "INT-004"
+    ]
+  },
+  {
+    "id": "TC-005",
+    "name": "验证属性选择与排序-聚合意图-边界输入",
+    "description": "验证设置项数量边界、排序边界或选择边界时系统行为。",
+    "objective": "验证属性选择与排序功能在边界输入下行为稳定且可解释。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-004; scenario=边界输入",
+    "steps": [
+      "1. 进入属性管理页面",
+      "2. 选择需要显示的属性",
+      "3. 调整属性顺序",
+      "4. 保存配置",
+      "5. 校验首页展示顺序"
+    ],
+    "test_data": {},
+    "expected_result": "系统对边界输入给出稳定响应，不崩溃并返回明确结果或提示。",
+    "success_criteria": "无崩溃、无卡死、边界输入结果可解释。",
+    "evidence_refs": [
+      "INT-004"
+    ]
+  },
+  {
+    "id": "TC-006",
+    "name": "验证属性选择与排序-聚合意图-异常路径",
+    "description": "验证非法配置或冲突配置时系统的保护逻辑。",
+    "objective": "验证属性选择与排序功能在异常路径下提示清晰且可恢复。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-004; scenario=异常路径",
+    "steps": [
+      "1. 进入属性管理页面",
+      "2. 选择需要显示的属性",
+      "3. 调整属性顺序",
+      "4. 保存配置",
+      "5. 校验首页展示顺序"
+    ],
+    "test_data": {},
+    "expected_result": "系统给出清晰错误提示，流程可回退或重试，不出现未处理异常。",
+    "success_criteria": "错误提示清晰、可恢复、无未处理异常。",
+    "evidence_refs": [
+      "INT-004"
+    ]
+  },
+  {
+    "id": "TC-007",
+    "name": "验证单位选择与隐藏-聚合意图-正常流程",
+    "description": "验证用户在标准输入和标准路径下可完成核心功能。",
+    "objective": "验证单位选择与隐藏功能在正常流程可执行且结果正确。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-005; scenario=正常流程",
+    "steps": [
+      "1. 进入单位管理页面",
+      "2. 选择或取消单位",
+      "3. 保存设置",
+      "4. 返回转换页面",
+      "5. 校验单位可见性"
+    ],
+    "test_data": {},
+    "expected_result": "功能执行成功并给出可见反馈。",
+    "success_criteria": "关键步骤全部可执行，结果与预期一致。",
+    "evidence_refs": [
+      "INT-005"
+    ]
+  },
+  {
+    "id": "TC-008",
+    "name": "验证单位选择与隐藏-聚合意图-边界输入",
+    "description": "验证设置项数量边界、排序边界或选择边界时系统行为。",
+    "objective": "验证单位选择与隐藏功能在边界输入下行为稳定且可解释。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-005; scenario=边界输入",
+    "steps": [
+      "1. 进入单位管理页面",
+      "2. 选择或取消单位",
+      "3. 保存设置",
+      "4. 返回转换页面",
+      "5. 校验单位可见性"
+    ],
+    "test_data": {},
+    "expected_result": "系统对边界输入给出稳定响应，不崩溃并返回明确结果或提示。",
+    "success_criteria": "无崩溃、无卡死、边界输入结果可解释。",
+    "evidence_refs": [
+      "INT-005"
+    ]
+  },
+  {
+    "id": "TC-009",
+    "name": "验证单位选择与隐藏-聚合意图-异常路径",
+    "description": "验证非法配置或冲突配置时系统的保护逻辑。",
+    "objective": "验证单位选择与隐藏功能在异常路径下提示清晰且可恢复。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-005; scenario=异常路径",
+    "steps": [
+      "1. 进入单位管理页面",
+      "2. 选择或取消单位",
+      "3. 保存设置",
+      "4. 返回转换页面",
+      "5. 校验单位可见性"
+    ],
+    "test_data": {},
+    "expected_result": "系统给出清晰错误提示，流程可回退或重试，不出现未处理异常。",
+    "success_criteria": "错误提示清晰、可恢复、无未处理异常。",
+    "evidence_refs": [
+      "INT-005"
+    ]
+  },
+  {
+    "id": "TC-010",
+    "name": "验证系统设置-聚合意图-正常流程",
+    "description": "验证用户在标准输入和标准路径下可完成核心功能。",
+    "objective": "验证系统设置功能在正常流程可执行且结果正确。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-006; scenario=正常流程",
+    "steps": [
+      "1. 进入设置页面",
+      "2. 选择设置项",
+      "3. 修改配置",
+      "4. 保存设置",
+      "5. 返回验证生效"
+    ],
+    "test_data": {},
+    "expected_result": "功能执行成功并给出可见反馈。",
+    "success_criteria": "关键步骤全部可执行，结果与预期一致。",
+    "evidence_refs": [
+      "INT-006"
+    ]
+  },
+  {
+    "id": "TC-011",
+    "name": "验证系统设置-聚合意图-边界输入",
+    "description": "验证设置项数量边界、排序边界或选择边界时系统行为。",
+    "objective": "验证系统设置功能在边界输入下行为稳定且可解释。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-006; scenario=边界输入",
+    "steps": [
+      "1. 进入设置页面",
+      "2. 选择设置项",
+      "3. 修改配置",
+      "4. 保存设置",
+      "5. 返回验证生效"
+    ],
+    "test_data": {},
+    "expected_result": "系统对边界输入给出稳定响应，不崩溃并返回明确结果或提示。",
+    "success_criteria": "无崩溃、无卡死、边界输入结果可解释。",
+    "evidence_refs": [
+      "INT-006"
+    ]
+  },
+  {
+    "id": "TC-012",
+    "name": "验证系统设置-聚合意图-异常路径",
+    "description": "验证非法配置或冲突配置时系统的保护逻辑。",
+    "objective": "验证系统设置功能在异常路径下提示清晰且可恢复。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-006; scenario=异常路径",
+    "steps": [
+      "1. 进入设置页面",
+      "2. 选择设置项",
+      "3. 修改配置",
+      "4. 保存设置",
+      "5. 返回验证生效"
+    ],
+    "test_data": {},
+    "expected_result": "系统给出清晰错误提示，流程可回退或重试，不出现未处理异常。",
+    "success_criteria": "错误提示清晰、可恢复、无未处理异常。",
+    "evidence_refs": [
+      "INT-006"
+    ]
+  },
+  {
+    "id": "TC-013",
+    "name": "验证货币汇率换算-聚合意图-正常流程",
+    "description": "验证用户在标准输入和标准路径下可完成核心功能。",
+    "objective": "验证货币汇率换算功能在正常流程可执行且结果正确。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-003; scenario=正常流程",
+    "steps": [
+      "1. 进入货币换算页面",
+      "2. 选择源货币与目标货币",
+      "3. 输入金额",
+      "4. 执行换算",
+      "5. 校验汇率结果"
+    ],
+    "test_data": {},
+    "expected_result": "功能执行成功并给出可见反馈。",
+    "success_criteria": "关键步骤全部可执行，结果与预期一致。",
+    "evidence_refs": [
+      "INT-003"
+    ]
+  },
+  {
+    "id": "TC-014",
+    "name": "验证货币汇率换算-聚合意图-边界输入",
+    "description": "验证大额/小额/高精度金额输入时换算稳定性。",
+    "objective": "验证货币汇率换算功能在边界输入下行为稳定且可解释。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-003; scenario=边界输入",
+    "steps": [
+      "1. 进入货币换算页面",
+      "2. 选择源货币与目标货币",
+      "3. 输入金额",
+      "4. 执行换算",
+      "5. 校验汇率结果"
+    ],
+    "test_data": {},
+    "expected_result": "金额边界输入下换算结果可展示且格式正确。",
+    "success_criteria": "无崩溃、无卡死、边界输入结果可解释。",
+    "evidence_refs": [
+      "INT-003"
+    ]
+  },
+  {
+    "id": "TC-015",
+    "name": "验证货币汇率换算-聚合意图-异常路径",
+    "description": "验证网络不可用或汇率获取失败时系统提示。",
+    "objective": "验证货币汇率换算功能在异常路径下提示清晰且可恢复。",
+    "extra_info": "entry=com.ferrarid.converterpro; intent_id=INT-003; scenario=异常路径",
+    "steps": [
+      "1. 进入货币换算页面",
+      "2. 选择源货币与目标货币",
+      "3. 输入金额",
+      "4. 执行换算",
+      "5. 校验汇率结果"
+    ],
+    "test_data": {},
+    "expected_result": "网络异常时显示可理解提示，并提供重试或缓存结果。",
+    "success_criteria": "错误提示清晰、可恢复、无未处理异常。",
+    "evidence_refs": [
+      "INT-003"
+    ]
+  }
+]

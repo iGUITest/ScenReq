@@ -1,0 +1,206 @@
+{
+  "manifest": {
+    "manifest_path": "D:\\nju\\需求生成系统\\ScenReq\\Req\\tools\\update\\output\\decompiled\\ConverterNOW\\AndroidManifest.xml",
+    "package": "com.ferrarid.converterpro",
+    "activities": [
+      {
+        "name": "com.ferrarid.converterpro.MainActivity",
+        "launcher": true,
+        "exported": "true"
+      },
+      {
+        "name": "io.flutter.plugins.urllauncher.WebViewActivity",
+        "launcher": false,
+        "exported": "false"
+      }
+    ],
+    "services": [],
+    "receivers": [
+      {
+        "name": "androidx.profileinstaller.ProfileInstallReceiver",
+        "exported": "true"
+      }
+    ]
+  },
+  "resource_stats": {
+    "activity_count": 2,
+    "layout_count": 39,
+    "string_count": 60
+  },
+  "smali_stats": {
+    "class_count": 1587,
+    "method_count": 8235,
+    "call_count": 44865
+  },
+  "intent_filters": {
+    "min_confidence": 0.2,
+    "aggregate_by_type": true,
+    "raw_intent_count": 7,
+    "filtered_intent_count": 7,
+    "dropped_low_confidence_count": 0,
+    "used_empty_filter_fallback": false
+  },
+  "intent_units": [
+    {
+      "intent_id": "INT-001",
+      "name": "单位转换-聚合意图",
+      "entry": "com.ferrarid.converterpro",
+      "intent_type": "单位转换",
+      "confidence": 0.92,
+      "steps": [
+        "1. 进入单位转换页面",
+        "2. 选择源单位与目标单位",
+        "3. 输入待转换数值",
+        "4. 执行转换",
+        "5. 校验结果数值"
+      ],
+      "success_signal": [
+        "功能流程可执行且结果可见"
+      ],
+      "failure_signal": [
+        "功能入口缺失或操作后无结果"
+      ],
+      "evidence": {
+        "methods": [
+          "Lcom/ferrarid/converterpro/MainActivity;-><init>#1"
+        ],
+        "layout_views": [],
+        "actions": [
+          "asset_keyword_mining"
+        ]
+      },
+      "entry_candidates": [
+        "com.ferrarid.converterpro.MainActivity",
+        "com.ferrarid.converterpro"
+      ],
+      "source_count": 2
+    },
+    {
+      "intent_id": "INT-004",
+      "name": "属性选择与排序-聚合意图",
+      "entry": "com.ferrarid.converterpro",
+      "intent_type": "属性选择与排序",
+      "confidence": 0.74,
+      "steps": [
+        "1. 进入属性管理页面",
+        "2. 选择需要显示的属性",
+        "3. 调整属性顺序",
+        "4. 保存配置",
+        "5. 校验首页展示顺序"
+      ],
+      "success_signal": [
+        "功能流程可执行且结果可见"
+      ],
+      "failure_signal": [
+        "功能入口缺失或操作后无结果"
+      ],
+      "evidence": {
+        "methods": [],
+        "layout_views": [],
+        "actions": [
+          "asset_keyword_mining"
+        ]
+      },
+      "entry_candidates": [
+        "com.ferrarid.converterpro"
+      ],
+      "source_count": 1
+    },
+    {
+      "intent_id": "INT-005",
+      "name": "单位选择与隐藏-聚合意图",
+      "entry": "com.ferrarid.converterpro",
+      "intent_type": "单位选择与隐藏",
+      "confidence": 0.68,
+      "steps": [
+        "1. 进入单位管理页面",
+        "2. 选择或取消单位",
+        "3. 保存设置",
+        "4. 返回转换页面",
+        "5. 校验单位可见性"
+      ],
+      "success_signal": [
+        "功能流程可执行且结果可见"
+      ],
+      "failure_signal": [
+        "功能入口缺失或操作后无结果"
+      ],
+      "evidence": {
+        "methods": [],
+        "layout_views": [],
+        "actions": [
+          "asset_keyword_mining"
+        ]
+      },
+      "entry_candidates": [
+        "com.ferrarid.converterpro"
+      ],
+      "source_count": 1
+    },
+    {
+      "intent_id": "INT-006",
+      "name": "系统设置-聚合意图",
+      "entry": "com.ferrarid.converterpro",
+      "intent_type": "系统设置",
+      "confidence": 0.62,
+      "steps": [
+        "1. 进入设置页面",
+        "2. 选择设置项",
+        "3. 修改配置",
+        "4. 保存设置",
+        "5. 返回验证生效"
+      ],
+      "success_signal": [
+        "功能流程可执行且结果可见"
+      ],
+      "failure_signal": [
+        "功能入口缺失或操作后无结果"
+      ],
+      "evidence": {
+        "methods": [],
+        "layout_views": [],
+        "actions": [
+          "asset_keyword_mining"
+        ]
+      },
+      "entry_candidates": [
+        "com.ferrarid.converterpro"
+      ],
+      "source_count": 1
+    },
+    {
+      "intent_id": "INT-003",
+      "name": "货币汇率换算-聚合意图",
+      "entry": "com.ferrarid.converterpro",
+      "intent_type": "货币汇率换算",
+      "confidence": 0.56,
+      "steps": [
+        "1. 进入货币换算页面",
+        "2. 选择源货币与目标货币",
+        "3. 输入金额",
+        "4. 执行换算",
+        "5. 校验汇率结果"
+      ],
+      "success_signal": [
+        "功能流程可执行且结果可见"
+      ],
+      "failure_signal": [
+        "功能入口缺失或操作后无结果"
+      ],
+      "evidence": {
+        "methods": [],
+        "layout_views": [],
+        "actions": [
+          "asset_keyword_mining"
+        ]
+      },
+      "entry_candidates": [
+        "com.ferrarid.converterpro"
+      ],
+      "source_count": 1
+    }
+  ],
+  "legacy_activity_analysis_json": "D:\\nju\\需求生成系统\\ScenReq\\Req\\tools\\update\\output\\ConverterNOW\\activity_analysis_enhanced.json",
+  "legacy_activity_analysis_txt": "D:\\nju\\需求生成系统\\ScenReq\\Req\\tools\\update\\output\\ConverterNOW\\activity_analysis_enhanced.txt",
+  "prompt_context_txt": "D:\\nju\\需求生成系统\\ScenReq\\Req\\tools\\update\\output\\ConverterNOW\\prompt_context_enhanced.txt"
+}

@@ -152,5 +152,5 @@ def save_test_json(app_name, tests, package: str | None = None, launch_activity:
     content = to_test_json_structure(app_name, tests, package, launch_activity)
     with open(out_path.as_posix(), 'w', encoding='utf-8') as f:
         json.dump(content, f, ensure_ascii=False, indent=2)
-    print(f"✅ TEST_JSON 保存: {out_path.as_posix()}")
+    print(f"[OK] TEST_JSON 保存: {out_path.as_posix()}")
     return out_path.as_posix()
