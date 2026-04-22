@@ -25,7 +25,7 @@ from Req.llm.langchain_client import get_chat
 from Req.config.RunConfig import SOFTWARE_REQUIREMENTS_DIR, TEST_REQUIREMENTS_DIR, API_KEY
 from Req.filters.requirement_filter import filter_automatable_requirements
 from Req.experiment.no_fill_prompts import build_test_sys_prompt, build_test_human_prompt
-from Req.tools.extract_activities import extract_activities_from_manifest
+from Req.tools.parse_flow import _extract_activities_from_manifest as extract_activities_from_manifest
 
 
 def ensure_dir(p: Path):

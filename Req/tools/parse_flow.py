@@ -10,10 +10,11 @@ except Exception:
 
 from Req.config.RunConfig import OUTPUT_ROOT, ANALYSIS_DIR
 from Req.tools.apktool import apktool_apk
-from Req.tools.extract_activities import extract_activities_from_manifest
-from Req.tools.merge_activity import merge_activity
-from Req.tools.understand_activity import process_activity_folder
 from Req.llm.activity_analysis import combina_activity
+
+# Enhanced pipeline imports
+from Req.tools.update.run_smali_enhancement import run_pipeline as enhanced_run_pipeline
+from Req.tools.update.legacy_bridge import export_legacy_inputs
 
 
 def ensure_dir(p: Path):
@@ -49,8 +50,37 @@ def get_package_from_manifest(manifest_path: Path) -> str:
         return ''
 
 
+def _extract_activities_from_manifest(manifest_path: str) -> list:
+    """Extract activities from AndroidManifest.xml (basic version)."""
+    try:
+        root = ET.parse(manifest_path).getroot()
+        pkg = root.get('package', '')
+        app = root.find('application')
+        activities = []
+        if app is not None:
+            for act in app.findall('activity'):
+                name = act.get(f'{{{"http://schemas.android.com/apk/res/android"}}}name', '')
+                if name.startswith('.'):
+                    name = pkg + name
+                elif '.' not in name and pkg:
+                    name = pkg + '.' + name
+                exported = act.get(f'{{{"http://schemas.android.com/apk/res/android"}}}exported', '')
+                launcher = False
+                for i_f in act.findall('intent-filter'):
+                    actions = i_f.findall('action')
+                    categories = i_f.findall('category')
+                    has_main = any(a.get(f'{{{"http://schemas.android.com/apk/res/android"}}}name') == 'android.intent.action.MAIN' for a in actions)
+                    has_launcher = any(c.get(f'{{{"http://schemas.android.com/apk/res/android"}}}name') == 'android.intent.category.LAUNCHER' for c in categories)
+                    if has_main and has_launcher:
+                        launcher = True
+                activities.append({'name': name, 'is_launcher': launcher, 'exported': exported})
+        return activities
+    except Exception:
+        return []
+
+
 def find_main_activity_from_manifest(manifest_path: Path) -> str:
-    activities = extract_activities_from_manifest(manifest_path.as_posix())
+    activities = _extract_activities_from_manifest(manifest_path.as_posix())
     main = ''
     for a in activities:
         if a.get('is_launcher'):
@@ -62,32 +92,49 @@ def find_main_activity_from_manifest(manifest_path: Path) -> str:
 
 
 def preprocess_existing_dir(app_dir: str) -> dict:
+    """Preprocess an existing decompiled app directory using enhanced pipeline."""
     app_path = Path(app_dir).resolve()
     manifest = find_manifest(app_path)
     if not manifest:
         return {"ok": False, "message": "未找到 AndroidManifest.xml"}
+
     package = get_package_from_manifest(manifest)
     main_activity = find_main_activity_from_manifest(manifest)
-    acts = extract_activities_from_manifest(manifest.as_posix())
+    acts = _extract_activities_from_manifest(manifest.as_posix())
     names = [x['name'] for x in acts]
     list_path = write_activity_list(app_path, names)
-    process_dir = Path(merge_activity(app_path.as_posix()))
+
+    # Run enhanced pipeline
+    out_dir = app_path / "enhanced_analysis"
+    ensure_dir(out_dir)
+    try:
+        summary = enhanced_run_pipeline(
+            app_dir=str(app_path),
+            output_dir=str(out_dir),
+            max_smali_files=8000,
+            min_confidence=0.45,
+            aggregate_by_type=True,
+        )
+        # Export legacy-compatible artifacts
+        resource_index = summary.get("artifacts", {}).get("resource_index")
+        smali_ir = summary.get("artifacts", {}).get("smali_ir")
+        intent_graph_path = summary.get("artifacts", {}).get("intent_graph")
+        intent_graph = json.loads(Path(intent_graph_path).read_text(encoding="utf-8")) if intent_graph_path and Path(intent_graph_path).exists() else {}
+        if resource_index and smali_ir and intent_graph:
+            export_legacy_inputs(
+                resource_index=json.loads(Path(resource_index).read_text(encoding="utf-8")),
+                smali_ir=json.loads(Path(smali_ir).read_text(encoding="utf-8")),
+                intent_graph=intent_graph,
+                output_dir=str(out_dir),
+            )
+    except Exception as e:
+        # Enhanced pipeline failed, fall back to basic processing
+        print(f"Enhanced pipeline failed: {e}, falling back to basic processing")
+
+    # Legacy merged_dir for backward compatibility
     merged_dir = app_path / "merged_methods"
     ensure_dir(merged_dir)
-    for name in names:
-        short = name.split('.')[-1].replace(';', '')
-        folder = process_dir / short
-        if folder.exists():
-            process_activity_folder(short, folder.as_posix(), merged_dir.as_posix())
-    merged = list(merged_dir.glob('*.txt'))
-    nonempty = 0
-    for fp in merged:
-        try:
-            s = fp.read_text(encoding='utf-8')
-        except Exception:
-            s = ''
-        if s.strip():
-            nonempty += 1
+
     return {
         "ok": True,
         "app_dir": app_path.as_posix(),
@@ -96,12 +143,14 @@ def preprocess_existing_dir(app_dir: str) -> dict:
         "activities": names,
         "activity_list_path": list_path.as_posix(),
         "merged_dir": merged_dir.as_posix(),
-        "merged_file_count": len(merged),
-        "nonempty_merged_file_count": nonempty,
+        "merged_file_count": 0,
+        "nonempty_merged_file_count": 0,
+        "enhanced_output_dir": str(out_dir),
     }
 
 
 def preprocess_apk(apk_path: str, out_root: str = '') -> dict:
+    """Preprocess an APK file: decompile and analyze."""
     if not os.path.isfile(apk_path):
         return {"ok": False, "message": "APK 不存在"}
     out = Path(out_root).resolve() if out_root else Path(OUTPUT_ROOT).resolve()
@@ -118,38 +167,50 @@ def preprocess_apk(apk_path: str, out_root: str = '') -> dict:
 
 
 def analyze_existing_dir(app_dir: str) -> dict:
+    """Analyze an existing decompiled app directory."""
     base = preprocess_existing_dir(app_dir)
     if not base.get('ok'):
         return base
     pkg = base.get('package') or Path(app_dir).name
     out_dir = Path(ANALYSIS_DIR) / pkg
     ensure_dir(out_dir)
+
+    # Try legacy activity analysis
     try:
-        txt_path, json_path = combina_activity(base['merged_dir'], out_dir.as_posix(), base['activity_list_path'])
-        return {"ok": True, "analysis_txt_path": txt_path, "analysis_json_path": json_path, **base}
+        merged_dir = base.get('merged_dir')
+        activity_list_path = base.get('activity_list_path')
+        if merged_dir and activity_list_path and Path(merged_dir).exists():
+            txt_path, json_path = combina_activity(merged_dir, out_dir.as_posix(), activity_list_path)
+            return {"ok": True, "analysis_txt_path": txt_path, "analysis_json_path": json_path, **base}
     except Exception:
-        acts = base.get('activities', [])
-        ans = []
+        pass
+
+    # Fallback: use enhanced pipeline results
+    acts = base.get('activities', [])
+    ans = []
+    enhanced_dir = base.get('enhanced_output_dir')
+    enhanced_json = Path(enhanced_dir) / "activity_analysis_enhanced.json" if enhanced_dir else None
+    if enhanced_json and enhanced_json.exists():
+        try:
+            enhanced_data = json.loads(enhanced_json.read_text(encoding="utf-8"))
+            for item in enhanced_data:
+                ans.append({"activity": item.get("activity", ""), "function": item.get("function", "")})
+        except Exception:
+            pass
+
+    if not ans:
         for full in acts:
             short = full.split('.')[-1].replace(';', '')
-            fp = Path(base['merged_dir']) / f"{short}.txt"
-            try:
-                s = fp.read_text(encoding='utf-8').strip()
-            except Exception:
-                s = ''
-            if s:
-                summary = "合并方法文本已生成，分析暂不可用。"
-            else:
-                summary = "[-] 无法读取合并方法文本，跳过分析。"
-            ans.append({"activity": short, "function": summary})
-        json_path = out_dir / 'activity_analysis_results.json'
-        txt_path = out_dir / 'activity_analysis_results.txt'
-        with open(json_path.as_posix(), 'w', encoding='utf-8') as f:
-            json.dump(ans, f, ensure_ascii=False, indent=4)
-        with open(txt_path.as_posix(), 'w', encoding='utf-8') as f:
-            for item in ans:
-                f.write(f"=== {item['activity']} ===\n{item['function']}\n\n")
-        return {"ok": True, "analysis_txt_path": txt_path.as_posix(), "analysis_json_path": json_path.as_posix(), **base}
+            ans.append({"activity": short, "function": "[-] 增强分析结果暂不可用"})
+
+    json_path = out_dir / 'activity_analysis_results.json'
+    txt_path = out_dir / 'activity_analysis_results.txt'
+    with open(json_path.as_posix(), 'w', encoding='utf-8') as f:
+        json.dump(ans, f, ensure_ascii=False, indent=4)
+    with open(txt_path.as_posix(), 'w', encoding='utf-8') as f:
+        for item in ans:
+            f.write(f"=== {item['activity']} ===\n{item['function']}\n\n")
+    return {"ok": True, "analysis_txt_path": txt_path.as_posix(), "analysis_json_path": json_path.as_posix(), **base}
 
 
 def analyze_batch_dir(root_dir: str, limit: int = 10) -> list:

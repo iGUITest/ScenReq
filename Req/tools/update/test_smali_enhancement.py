@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from Req.tools.apktool import apktool_apk
+from ..apktool import apktool_apk
 
 from .run_smali_enhancement import run_pipeline
 
