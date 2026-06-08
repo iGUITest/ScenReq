@@ -1,0 +1,1000 @@
+{
+  "app_dir": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro",
+  "manifest": {
+    "manifest_path": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro\\AndroidManifest.xml",
+    "package": "com.ferrarid.converterpro",
+    "activities": [
+      {
+        "name": "com.ferrarid.converterpro.MainActivity",
+        "launcher": true,
+        "exported": "true"
+      },
+      {
+        "name": "io.flutter.plugins.urllauncher.WebViewActivity",
+        "launcher": false,
+        "exported": "false"
+      }
+    ],
+    "services": [],
+    "receivers": [
+      {
+        "name": "androidx.profileinstaller.ProfileInstallReceiver",
+        "exported": "true"
+      }
+    ]
+  },
+  "strings": {
+    "abc_action_bar_up_description": "Navigate up",
+    "abc_action_mode_done": "Done",
+    "abc_capital_off": "OFF",
+    "abc_capital_on": "ON",
+    "abc_menu_alt_shortcut_label": "Alt+",
+    "abc_menu_ctrl_shortcut_label": "Ctrl+",
+    "abc_menu_delete_shortcut_label": "delete",
+    "abc_menu_enter_shortcut_label": "enter",
+    "abc_menu_function_shortcut_label": "Function+",
+    "abc_menu_meta_shortcut_label": "Meta+",
+    "abc_menu_shift_shortcut_label": "Shift+",
+    "abc_menu_space_shortcut_label": "space",
+    "abc_menu_sym_shortcut_label": "Sym+",
+    "abc_prepend_shortcut_label": "Menu+",
+    "abc_search_hint": "Search…",
+    "abc_searchview_description_clear": "Clear query",
+    "abc_searchview_description_search": "Search",
+    "abc_searchview_description_submit": "Submit query",
+    "abc_searchview_description_voice": "Voice search",
+    "abc_toolbar_collapse_description": "Collapse",
+    "androidx_startup": "androidx.startup",
+    "bottom_sheet_behavior": "com.google.android.material.bottomsheet.BottomSheetBehavior",
+    "bottomsheet_action_collapse": "Collapse the bottom sheet",
+    "bottomsheet_action_expand": "Expand the bottom sheet",
+    "bottomsheet_action_expand_halfway": "Expand halfway",
+    "bottomsheet_drag_handle_clicked": "Drag handle double-tapped",
+    "bottomsheet_drag_handle_content_description": "Drag handle",
+    "call_notification_answer_action": "Answer",
+    "call_notification_answer_video_action": "Video",
+    "call_notification_decline_action": "Decline",
+    "call_notification_hang_up_action": "Hang Up",
+    "call_notification_incoming_text": "Incoming call",
+    "call_notification_ongoing_text": "Ongoing call",
+    "call_notification_screening_text": "Screening an incoming call",
+    "character_counter_content_description": "Characters entered %1$d of %2$d",
+    "character_counter_overflowed_content_description": "Character limit exceeded %1$d of %2$d",
+    "character_counter_pattern": "%1$d/%2$d",
+    "clear_text_end_icon_content_description": "Clear text",
+    "copy": "Copy",
+    "copy_toast_msg": "Link copied to clipboard",
+    "error_a11y_label": "Error: invalid",
+    "error_icon_content_description": "Error",
+    "exposed_dropdown_menu_content_description": "Show dropdown menu",
+    "item_view_role_description": "Tab",
+    "material_clock_display_divider": ":",
+    "material_clock_toggle_content_description": "Select AM or PM",
+    "material_motion_easing_accelerated": "cubic-bezier(0.4, 0.0, 1.0, 1.0)",
+    "material_motion_easing_decelerated": "cubic-bezier(0.0, 0.0, 0.2, 1.0)",
+    "material_motion_easing_emphasized": "path(M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1)",
+    "material_motion_easing_linear": "cubic-bezier(0.0, 0.0, 1.0, 1.0)",
+    "material_motion_easing_standard": "cubic-bezier(0.4, 0.0, 0.2, 1.0)",
+    "material_timepicker_am": "AM",
+    "material_timepicker_pm": "PM",
+    "mtrl_chip_close_icon_content_description": "Remove %1$s",
+    "not_set": "Not set",
+    "password_toggle_content_description": "Show password",
+    "path_password_eye": "M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z",
+    "path_password_eye_mask_strike_through": "M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z",
+    "path_password_eye_mask_visible": "M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z",
+    "path_password_strike_through": "M3.27,4.27 L19.74,20.74"
+  },
+  "layouts": {
+    "abc_action_bar_title_item": [
+      {
+        "tag": "TextView",
+        "id": "@id/action_bar_title",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@id/action_bar_subtitle",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_action_menu_item_layout": [],
+    "abc_action_mode_close_item_material": [
+      {
+        "tag": "ImageView",
+        "id": "@id/action_mode_close_button",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_alert_dialog_button_bar_material": [
+      {
+        "tag": "ScrollView",
+        "id": "@id/buttonPanel",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "Button",
+        "id": "@android:id/button3",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "android.widget.Space",
+        "id": "@id/spacer",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "Button",
+        "id": "@android:id/button2",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "Button",
+        "id": "@android:id/button1",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_alert_dialog_material": [
+      {
+        "tag": "androidx.appcompat.widget.AlertDialogLayout",
+        "id": "@id/parentPanel",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "FrameLayout",
+        "id": "@id/contentPanel",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@id/scrollIndicatorUp",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "androidx.core.widget.NestedScrollView",
+        "id": "@id/scrollView",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "android.widget.Space",
+        "id": "@id/textSpacerNoTitle",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@android:id/message",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "android.widget.Space",
+        "id": "@id/textSpacerNoButtons",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@id/scrollIndicatorDown",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "FrameLayout",
+        "id": "@id/customPanel",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "FrameLayout",
+        "id": "@id/custom",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_alert_dialog_title_material": [
+      {
+        "tag": "LinearLayout",
+        "id": "@id/topPanel",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "LinearLayout",
+        "id": "@id/title_template",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@android:id/icon",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "androidx.appcompat.widget.DialogTitle",
+        "id": "@id/alertTitle",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "android.widget.Space",
+        "id": "@id/titleDividerNoCustom",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_cascading_menu_item_layout": [
+      {
+        "tag": "ImageView",
+        "id": "@id/group_divider",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "LinearLayout",
+        "id": "@id/content",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@id/title",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@id/shortcut",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@id/submenuarrow",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_list_menu_item_checkbox": [
+      {
+        "tag": "CheckBox",
+        "id": "@id/checkbox",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_list_menu_item_icon": [
+      {
+        "tag": "ImageView",
+        "id": "@id/icon",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_list_menu_item_radio": [
+      {
+        "tag": "RadioButton",
+        "id": "@id/radio",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_popup_menu_header_item_layout": [
+      {
+        "tag": "TextView",
+        "id": "@android:id/title",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_popup_menu_item_layout": [
+      {
+        "tag": "ImageView",
+        "id": "@id/group_divider",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "LinearLayout",
+        "id": "@id/content",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@id/title",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@id/shortcut",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@id/submenuarrow",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_search_dropdown_item_icons_2line": [
+      {
+        "tag": "ImageView",
+        "id": "@android:id/icon1",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@id/edit_query",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@android:id/icon2",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@android:id/text2",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@android:id/text1",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_search_view": [
+      {
+        "tag": "LinearLayout",
+        "id": "@id/search_bar",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@id/search_badge",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@id/search_button",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "LinearLayout",
+        "id": "@id/search_edit_frame",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@id/search_mag_icon",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "LinearLayout",
+        "id": "@id/search_plate",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "view",
+        "id": "@id/search_src_text",
+        "text": "",
+        "hint": "",
+        "input_type": "textAutoComplete|textNoSuggestions",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@id/search_close_btn",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "LinearLayout",
+        "id": "@id/submit_area",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@id/search_go_btn",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@id/search_voice_btn",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_select_dialog_material": [
+      {
+        "tag": "view",
+        "id": "@id/select_dialog_listview",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "abc_tooltip": [
+      {
+        "tag": "TextView",
+        "id": "@id/message",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "design_menu_item_action_area": [],
+    "design_navigation_menu_item": [
+      {
+        "tag": "CheckedTextView",
+        "id": "@id/design_menu_item_text",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ViewStub",
+        "id": "@id/design_menu_item_action_area_stub",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "design_text_input_end_icon": [
+      {
+        "tag": "com.google.android.material.internal.CheckableImageButton",
+        "id": "@id/text_input_end_icon",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "design_text_input_start_icon": [
+      {
+        "tag": "com.google.android.material.internal.CheckableImageButton",
+        "id": "@id/text_input_start_icon",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "material_clockface_textview": [],
+    "material_clockface_view": [
+      {
+        "tag": "merge",
+        "id": "@id/material_clock_face",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "com.google.android.material.timepicker.ClockHandView",
+        "id": "@id/material_clock_hand",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "material_clock_display": [
+      {
+        "tag": "LinearLayout",
+        "id": "@id/material_clock_display",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "include",
+        "id": "@id/material_hour_tv",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "include",
+        "id": "@id/material_minute_tv",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "material_clock_display_divider": [],
+    "material_clock_period_toggle": [
+      {
+        "tag": "com.google.android.material.button.MaterialButtonToggleGroup",
+        "id": "@id/material_clock_period_toggle",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "com.google.android.material.button.MaterialButton",
+        "id": "@id/material_clock_period_am_button",
+        "text": "AM",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "com.google.android.material.button.MaterialButton",
+        "id": "@id/material_clock_period_pm_button",
+        "text": "PM",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "material_radial_view_group": [
+      {
+        "tag": "View",
+        "id": "@id/circle_center",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "material_timepicker": [
+      {
+        "tag": "merge",
+        "id": "@id/material_timepicker_container",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "include",
+        "id": "@id/material_clock_display",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "include",
+        "id": "@id/material_clock_period_toggle",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "com.google.android.material.timepicker.ClockFaceView",
+        "id": "@id/material_clock_face",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "material_time_chip": [],
+    "material_time_input": [
+      {
+        "tag": "TextView",
+        "id": "@id/material_label",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "mtrl_alert_dialog": [
+      {
+        "tag": "androidx.appcompat.widget.AlertDialogLayout",
+        "id": "@id/parentPanel",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "FrameLayout",
+        "id": "@id/contentPanel",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "View",
+        "id": "@id/scrollIndicatorUp",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "androidx.core.widget.NestedScrollView",
+        "id": "@id/scrollView",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "android.widget.Space",
+        "id": "@id/textSpacerNoTitle",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@android:id/message",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "android.widget.Space",
+        "id": "@id/textSpacerNoButtons",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "View",
+        "id": "@id/scrollIndicatorDown",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "FrameLayout",
+        "id": "@id/customPanel",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "FrameLayout",
+        "id": "@id/custom",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "mtrl_alert_dialog_actions": [
+      {
+        "tag": "ScrollView",
+        "id": "@id/buttonPanel",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "Button",
+        "id": "@android:id/button3",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "android.widget.Space",
+        "id": "@id/spacer",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "Button",
+        "id": "@android:id/button2",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "Button",
+        "id": "@android:id/button1",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "mtrl_alert_dialog_title": [
+      {
+        "tag": "LinearLayout",
+        "id": "@id/topPanel",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "LinearLayout",
+        "id": "@id/title_template",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "ImageView",
+        "id": "@android:id/icon",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "androidx.appcompat.widget.DialogTitle",
+        "id": "@id/alertTitle",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "android.widget.Space",
+        "id": "@id/titleDividerNoCustom",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "mtrl_alert_select_dialog_item": [
+      {
+        "tag": "TextView",
+        "id": "@android:id/text1",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "mtrl_alert_select_dialog_multichoice": [
+      {
+        "tag": "CheckedTextView",
+        "id": "@android:id/text1",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "mtrl_alert_select_dialog_singlechoice": [
+      {
+        "tag": "CheckedTextView",
+        "id": "@android:id/text1",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "preference": [
+      {
+        "tag": "FrameLayout",
+        "id": "@id/icon_frame",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "androidx.preference.internal.PreferenceImageView",
+        "id": "@android:id/icon",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@android:id/title",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "TextView",
+        "id": "@android:id/summary",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      },
+      {
+        "tag": "LinearLayout",
+        "id": "@android:id/widget_frame",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "select_dialog_item_material": [
+      {
+        "tag": "TextView",
+        "id": "@android:id/text1",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "select_dialog_multichoice_material": [
+      {
+        "tag": "CheckedTextView",
+        "id": "@android:id/text1",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ],
+    "select_dialog_singlechoice_material": [
+      {
+        "tag": "CheckedTextView",
+        "id": "@android:id/text1",
+        "text": "",
+        "hint": "",
+        "input_type": "",
+        "on_click": ""
+      }
+    ]
+  },
+  "stats": {
+    "activity_count": 2,
+    "layout_count": 39,
+    "string_count": 60
+  }
+}

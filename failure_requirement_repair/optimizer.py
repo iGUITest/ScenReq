@@ -2,13 +2,20 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import time
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 from langchain_core.messages import HumanMessage, SystemMessage
 
-from Req.config.RunConfig import API_KEY
+# Ensure `from Req.X` resolves to ScenReq/Req/, not the standalone Req/ at project root
+_CUR_DIR = Path(__file__).resolve().parent          # failure_requirement_repair/
+_SCENREQ_DIR = _CUR_DIR.parent                      # ScenReq/
+if str(_SCENREQ_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCENREQ_DIR))
+
+from Req.config.RunConfig import API_KEY, TEST_REQUIREMENTS_DIR
 from Req.llm.langchain_client import get_chat
 
 from .context_builder import build_context_block, infer_failure_signals
@@ -206,7 +213,7 @@ def optimize_requirements(req: RepairRequest) -> RepairResult:
         )
 
     ts = time.strftime("%Y%m%d_%H%M%S")
-    out_dir = Path(req.output_dir) if req.output_dir else Path("Req/output/test_requirements")
+    out_dir = Path(req.output_dir) if req.output_dir else TEST_REQUIREMENTS_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
 
     safe_app = req.app_name.replace(" ", "_")

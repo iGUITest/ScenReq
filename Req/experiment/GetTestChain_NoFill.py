@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 import re
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent   # ScenReq/
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
@@ -214,6 +214,7 @@ def generate_tests_for_requirements(app_name: str, package_name: str, main_activ
     chat = get_chat("qwen-plus", API_KEY)
 
     for idx, req in enumerate(software_requirements, start=1):
+        req_id = str(req.get("id") or req.get("requirement_id") or f"FR-{idx:03d}").strip()
         title = str(req.get("title") or req.get("name") or f"功能{idx}").strip()
         description = str(req.get("description") or req.get("requirement") or "").strip()
         sys_prompt = build_test_sys_prompt(per_req_count, lang=lang)
@@ -231,6 +232,7 @@ def generate_tests_for_requirements(app_name: str, package_name: str, main_activ
                 for j, t in enumerate(arr, start=1):
                     tests.append({
                         "id": f"TC-{idx:02d}-{j:02d}",
+                        "requirement_id": req_id,   # 绑定到来源 FR 的 ID
                         "name": str(t.get("name") or f"场景{idx:02d}-{j:02d}").strip(),
                         "description": str(t.get("description") or "").strip(),
                         "objective": str(t.get("objective") or "").strip(),

@@ -112,6 +112,7 @@ def to_test_json_structure(app_name, tests, package: str | None = None, launch_a
     # 顶层为对象：包含 apps（元数据）与 scenarios（测试场景）
     scenarios = []
     for idx, t in enumerate(tests, start=1):
+        index = normalize_text(t.get("id")) or f"S{idx}"
         name = normalize_text(t.get("name") or t.get("title") or f"场景{idx}")
         desc = normalize_text(t.get("description") or t.get("test_description") or "在当前页面内完成该操作并验证结果")
         # extra-info 必须是对象，优先使用 test_data
@@ -124,7 +125,7 @@ def to_test_json_structure(app_name, tests, package: str | None = None, launch_a
         extra_info = normalize_placeholder_data(extra_info)
 
         scenarios.append({
-            "id": f"S_{normalize_id(name)}_{idx:03d}",
+            "id": index,
             "name": name,
             "description": desc,
             "extra-info": extra_info,

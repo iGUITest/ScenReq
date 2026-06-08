@@ -1,0 +1,37 @@
+{
+  "app_dir": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro",
+  "output_dir": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro\\enhanced_analysis",
+  "stats": {
+    "activities": 2,
+    "layouts": 39,
+    "smali_classes": 1587,
+    "smali_methods": 8235,
+    "smali_calls": 44865,
+    "intent_units": 5,
+    "intent_raw_count": 7,
+    "intent_filtered_count": 6,
+    "intent_dropped_low_confidence": 1,
+    "legacy_activity_items": 5,
+    "llm_assist_enabled": false,
+    "llm_assist_status": "disabled",
+    "llm_assist_candidates": 0,
+    "llm_assist_accepted": 0
+  },
+  "artifacts": {
+    "resource_index": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro\\enhanced_analysis\\resource_index.json",
+    "smali_ir": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro\\enhanced_analysis\\smali_ir.json",
+    "intent_graph": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro\\enhanced_analysis\\intent_graph.json",
+    "activity_analysis_enhanced_json": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro\\enhanced_analysis\\activity_analysis_enhanced.json",
+    "activity_analysis_enhanced_txt": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro\\enhanced_analysis\\activity_analysis_enhanced.txt",
+    "prompt_context_enhanced_txt": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro\\enhanced_analysis\\prompt_context_enhanced.txt",
+    "legacy_parse_bundle": "D:\\nju\\需求生成系统\\ScenReq\\storage\\uploads\\5869f377-d5d9-465c-8679-768ad1b37c93\\work\\com.ferrarid.converterpro\\enhanced_analysis\\legacy_parse_bundle.json",
+    "llm_refinement": ""
+  },
+  "llm_assist": {
+    "enabled": false,
+    "status": "disabled",
+    "model": "qwen-plus",
+    "candidate_count": 0,
+    "accepted_count": 0
+  }
+}

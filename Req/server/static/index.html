@@ -212,7 +212,7 @@
                 <div class="mb-6">
                     <label class="block text-sm font-medium text-indigo-200 mb-2">{{ t('combo') }}</label>
                     <select v-model="form.combo" class="form-input w-full px-4 py-3 rounded-lg appearance-none bg-no-repeat bg-right">
-                        <option v-for="c in combos" :key="c" :value="c">{{ c }}</option>
+                        <option v-for="c in combos" :key="c" :value="c">{{ displayCombo(c) }}</option>
                     </select>
                 </div>
 
@@ -703,6 +703,17 @@
 
                 const t = (key) => translations[lang.value][key] || key;
 
+                const comboTranslations = {
+                    '仅使用应用介绍': 'App Introduction Only',
+                    '仅使用Activity分析': 'Activity Analysis Only',
+                    '应用介绍+Activity分析': 'App Introduction + Activity Analysis',
+                    '仅使用代码解析文档': 'Code Documentation Only',
+                    '代码解析文档+Activity分析': 'Code Documentation + Activity Analysis',
+                    '应用介绍+Activity分析+代码解析文档': 'App Introduction + Activity Analysis + Code Documentation',
+                };
+
+                const displayCombo = (c) => lang.value === 'en' ? (comboTranslations[c] || c) : c;
+
                 onMounted(async () => {
                     loadCombos();
                     checkConfig();
@@ -986,6 +997,7 @@
                 return {
                     lang,
                     combos,
+                    displayCombo,
                     form,
                     loading,
                     status,

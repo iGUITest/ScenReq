@@ -1,90 +1,282 @@
 [
     {
         "id": "TC-01-01",
-        "name": "主界面正常加载欢迎文案与功能图标",
-        "description": "应用启动后，主界面完整显示欢迎文案及三个常用转换类别图标，布局整齐无异常。",
-        "objective": "验证主界面是否按需求正确渲染欢迎信息和功能入口",
-        "extra_info": "无",
-        "expected_result": "可见清晰的欢迎文案'欢迎使用单位转换器Pro'，以及长度、温度、重量三个图标均完整显示、无重叠、无截断、无模糊"
+        "name": "Convert meters to feet with positive integer input",
+        "description": "User selects 'Length' category, chooses 'Meters' as source unit and 'Feet' as target unit, enters '10', and views the converted result.",
+        "objective": "Verify correct conversion from meters to feet with standard precision.",
+        "extra_info": "source_unit: Meters, target_unit: Feet, input_value: 10",
+        "expected_result": "Displays '32.8084 ft' (rounded to 4 decimal places)."
     },
     {
         "id": "TC-01-02",
-        "name": "欢迎文案字体与颜色可读性验证",
-        "description": "检查欢迎文案在不同屏幕亮度与常见分辨率下的显示效果，确保文字清晰可辨。",
-        "objective": "验证欢迎文案在主流设备上的视觉可读性",
-        "extra_info": "无",
-        "expected_result": "文案字体大小适中、颜色对比度足够（如深色文字配浅色背景），在模拟低亮度与1080p/720p屏幕下均无发虚或难以识别现象"
+        "name": "Convert Celsius to Fahrenheit with negative decimal input",
+        "description": "User navigates to temperature category, selects 'Celsius' → 'Fahrenheit', enters '-40.5', and checks the result.",
+        "objective": "Validate accurate conversion of negative decimal temperature values.",
+        "extra_info": "source_unit: Celsius, target_unit: Fahrenheit, input_value: -40.5",
+        "expected_result": "Displays '-40.9 °F' (rounded to 1 decimal place)."
     },
     {
         "id": "TC-01-03",
-        "name": "功能图标缺失场景：仅显示两个类别图标",
-        "description": "模拟后台数据异常导致温度图标未加载，观察界面是否仍显示欢迎文案且其余图标布局不塌陷。",
-        "objective": "验证界面在部分功能图标缺失时的容错性与稳定性",
-        "extra_info": "无",
-        "expected_result": "欢迎文案正常显示；长度、重量图标可见且位置合理；温度图标区域留空或显示默认占位符（非空白崩溃），无布局错乱或文字覆盖"
+        "name": "Convert kilograms to pounds with zero input",
+        "description": "User selects 'Weight' category, sets 'Kilograms' → 'Pounds', and inputs '0'.",
+        "objective": "Confirm correct handling and display of zero-value conversion.",
+        "extra_info": "source_unit: Kilograms, target_unit: Pounds, input_value: 0",
+        "expected_result": "Displays '0.0000 lb' (formatted to 4 decimal places)."
     },
     {
         "id": "TC-01-04",
-        "name": "超长欢迎文案适配测试（边界输入模拟）",
-        "description": "通过调试注入超长欢迎文案（如30个汉字），验证文本是否自动换行或截断处理，避免遮挡下方图标。",
-        "objective": "验证欢迎文案内容过长时的UI自适应能力",
-        "extra_info": "欢迎文案：'欢迎使用单位转换器Pro——专业、精准、极速的全能单位换算工具'",
-        "expected_result": "文案在两行内完整显示并自动换行，末尾有省略号或适配为单行缩略；下方三个图标保持原始间距与可见性，无被遮盖或挤压现象"
+        "name": "Convert miles to kilometers with large number input",
+        "description": "User chooses 'Length', selects 'Miles' → 'Kilometers', and enters '999999'.",
+        "objective": "Ensure numeric overflow or precision limits are handled gracefully without crash or scientific notation.",
+        "extra_info": "source_unit: Miles, target_unit: Kilometers, input_value: 999999",
+        "expected_result": "Displays '1,609,343.999 km' (formatted with comma separators and 3 decimal places)."
     },
     {
         "id": "TC-01-05",
-        "name": "空状态：无任何功能图标加载",
-        "description": "模拟网络异常或初始化失败，导致所有转换类别图标均未渲染，仅显示欢迎文案。",
-        "objective": "验证主界面在完全缺失功能入口时的基础展示完整性",
-        "extra_info": "无",
-        "expected_result": "欢迎文案清晰可见、居中显示；图标区域为空白或统一灰色占位区；无崩溃、无闪烁、无残留残影；底部无错位按钮或异常提示"
+        "name": "Attempt conversion with invalid non-numeric input",
+        "description": "User selects 'Length', 'Inches' → 'Centimeters', and types 'abc' into the input field.",
+        "objective": "Verify system prevents erroneous conversion and provides clear user feedback.",
+        "extra_info": "source_unit: Inches, target_unit: Centimeters, input_value: 'abc'",
+        "expected_result": "Displays error message such as 'Please enter a valid number' and highlights input field."
+    },
+    {
+        "id": "TC-01-06",
+        "name": "Convert grams to ounces with very small decimal",
+        "description": "User selects 'Weight', 'Grams' → 'Ounces', and enters '0.001'.",
+        "objective": "Test precision retention for sub-gram conversions.",
+        "extra_info": "source_unit: Grams, target_unit: Ounces, input_value: 0.001",
+        "expected_result": "Displays '0.00004 oz' (scientific notation avoided; shown as decimal with trailing zeros up to 5 places)."
+    },
+    {
+        "id": "TC-01-07",
+        "name": "Switch target unit mid-session and re-calculate",
+        "description": "User converts '25' from 'Celsius' to 'Kelvin', then changes target unit to 'Fahrenheit' without re-entering value.",
+        "objective": "Confirm real-time recalculation upon target unit change.",
+        "extra_info": "source_unit: Celsius, initial_target: Kelvin, new_target: Fahrenheit, input_value: 25",
+        "expected_result": "Result updates instantly from '298.15 K' to '77.0 °F'."
+    },
+    {
+        "id": "TC-01-08",
+        "name": "Empty input conversion attempt",
+        "description": "User selects 'Length', 'Kilometers' → 'Miles', but leaves input field blank and triggers conversion.",
+        "objective": "Validate graceful handling of empty input before conversion.",
+        "extra_info": "source_unit: Kilometers, target_unit: Miles, input_value: ''",
+        "expected_result": "Displays placeholder or prompt like 'Enter a value' and does not show numeric result."
     },
     {
         "id": "TC-02-01",
-        "name": "主界面首次启动时显示操作引导文案",
-        "description": "用户首次打开应用，主界面无任何历史记录、未选中转换类型、无输入内容，且未触发任何交互",
-        "objective": "验证主界面在空状态时是否展示清晰的操作引导文案",
-        "extra_info": "无",
-        "expected_result": "页面中央或底部区域显示类似'点击下方图标开始转换'的引导文字，字体清晰、颜色可辨，无遮挡或截断"
+        "name": "Enable a previously hidden unit in Length category",
+        "description": "User navigates to the Length category settings, locates the disabled 'furlong' unit, and toggles it back on.",
+        "objective": "Verify that a hidden unit can be re-enabled and appears in the unit selection menu for Length conversions.",
+        "extra_info": "Category: Length; Unit: furlong; State before: disabled",
+        "expected_result": "The 'furlong' unit is visible and selectable in the Length unit picker after saving preferences."
     },
     {
         "id": "TC-02-02",
-        "name": "主界面清空所有历史记录后重新显示引导提示",
-        "description": "用户已使用过应用并存在转换记录，进入设置页清空全部历史后返回主界面",
-        "objective": "验证在历史数据被清除后，主界面是否恢复初始引导状态",
-        "extra_info": "无",
-        "expected_result": "原历史记录列表区域消失，取而代之的是居中显示的引导文案（如'点击下方图标开始转换'），且图标区域有轻微脉冲高亮效果"
+        "name": "Disable a unit in Temperature category and confirm removal from conversion UI",
+        "description": "User opens Temperature category settings, disables 'Rankine', saves changes, then starts a new temperature conversion.",
+        "objective": "Ensure disabled units do not appear in the unit selection dropdowns during active conversion.",
+        "extra_info": "Category: Temperature; Unit: Rankine; State before: enabled",
+        "expected_result": "Rankine is absent from both source and target unit lists in the conversion interface."
     },
     {
         "id": "TC-02-03",
-        "name": "主界面处于无网络状态时仍显示引导文案而非错误占位符",
-        "description": "设备开启飞行模式后启动应用，主界面未加载任何在线资源或动态组件",
-        "objective": "验证弱网或离线场景下引导文案是否仍稳定可见，不被加载失败提示覆盖",
-        "extra_info": "无",
-        "expected_result": "页面正常渲染，底部功能图标区域上方显示引导文案，无'网络异常'弹窗、无空白区块、无图标缺失"
+        "name": "Persist unit visibility settings across app restart",
+        "description": "User disables 'carat' under Mass, exits the app completely, relaunches, and checks Mass unit list.",
+        "objective": "Validate that unit visibility configuration survives app termination and restart.",
+        "extra_info": "Category: Mass; Unit: carat; State before: enabled",
+        "expected_result": "Carat does not appear in the Mass unit selection menu after relaunch."
     },
     {
         "id": "TC-02-04",
-        "name": "主界面语言切换为简体中文后引导文案正确本地化",
-        "description": "系统语言设为简体中文，用户切换应用内语言设置为中文后重启主界面",
-        "objective": "验证引导文案符合当前语言环境，无英文残留或乱码",
-        "extra_info": "无",
-        "expected_result": "显示文案为'点击下方图标开始转换'，标点全角，无拼写错误，字体大小适配屏幕"
+        "name": "Disable all units in a category and verify empty unit list",
+        "description": "User disables every unit under Area (e.g., acre, hectare, square mile), saves, then opens Area conversion.",
+        "objective": "Confirm behavior when no units are enabled in a category — e.g., placeholder or empty state handling.",
+        "extra_info": "Category: Area; Units disabled: acre, hectare, square mile, square yard, square foot, square inch, km², m², cm², mm²",
+        "expected_result": "Area unit selection shows either an empty list with appropriate message (e.g., 'No units enabled') or defaults to a fallback behavior without crashing."
     },
     {
         "id": "TC-02-05",
-        "name": "主界面在大屏平板设备上引导文案垂直居中且不溢出",
-        "description": "应用运行于10.1英寸Android平板（分辨率1200×1920），主界面无任何用户操作痕迹",
-        "objective": "验证不同屏幕尺寸下引导文案的布局适应性与可读性",
-        "extra_info": "无",
-        "expected_result": "引导文案位于屏幕垂直中心偏下位置，文字完整显示、无换行错位、无缩放失真，周围留白合理"
+        "name": "Toggle visibility of multiple units across different categories simultaneously",
+        "description": "User disables 'nautical mile' (Length), enables 'BTU' (Energy), and disables 'bar' (Pressure) in one settings session, then saves.",
+        "objective": "Test multi-category unit visibility changes applied atomically and correctly persisted.",
+        "extra_info": "Categories: Length, Energy, Pressure; Units: nautical mile (disable), BTU (enable), bar (disable)",
+        "expected_result": "Nautical mile is hidden in Length, BTU is visible in Energy, and bar is hidden in Pressure — all reflected immediately in respective conversion screens."
     },
     {
         "id": "TC-02-06",
-        "name": "主界面无障碍模式开启时引导文案可被读屏软件准确播报",
-        "description": "系统已启用TalkBack，用户首次进入主界面",
-        "objective": "验证引导文案具备可访问性属性，能被辅助技术识别并朗读",
-        "extra_info": "无",
-        "expected_result": "TalkBack聚焦于引导文案区域时，准确朗读'点击下方图标开始转换'，无静音、重复或跳读"
+        "name": "Re-enable a unit after clearing app data and reopening",
+        "description": "User clears app data, launches app, configures unit preferences, disables 'peck' under Volume, then re-enables it later.",
+        "objective": "Verify that unit visibility state is properly initialized and modifiable post-reset.",
+        "extra_info": "Category: Volume; Unit: peck; App state: fresh install / data cleared",
+        "expected_result": "After re-enabling 'peck', it appears in the Volume unit list during conversion."
+    },
+    {
+        "id": "TC-03-01",
+        "name": "Select and reorder properties to display on main interface",
+        "description": "User accesses display settings, enables 'Conversion History' and 'Favorite Units', disables 'Recent Categories', and drags 'Favorite Units' above 'Conversion History'.",
+        "objective": "Verify that selected properties appear in the specified order on the main screen after saving changes.",
+        "extra_info": "None",
+        "expected_result": "Main interface shows only 'Favorite Units' followed by 'Conversion History'; 'Recent Categories' is absent."
+    },
+    {
+        "id": "TC-03-02",
+        "name": "Disable all properties and confirm empty main interface",
+        "description": "User navigates to display settings and turns off visibility for all available properties (e.g., Conversion History, Favorite Units, Recent Categories).",
+        "objective": "Confirm that the main interface displays no property sections when all are disabled.",
+        "extra_info": "None",
+        "expected_result": "Main screen shows only app header and empty space — no property cards or sections visible."
+    },
+    {
+        "id": "TC-03-03",
+        "name": "Reorder properties using drag-and-drop and verify persistence",
+        "description": "User enables 'Recent Categories', 'Conversion History', and 'Favorite Units', then reorders them as: 'Recent Categories' → 'Favorite Units' → 'Conversion History'.",
+        "objective": "Ensure the new order persists across app restarts and is reflected immediately upon returning to main screen.",
+        "extra_info": "None",
+        "expected_result": "After closing and reopening the app, main screen displays sections in the exact reordered sequence."
+    },
+    {
+        "id": "TC-03-04",
+        "name": "Enable single property and verify isolated display",
+        "description": "User disables all properties except 'Recent Categories' in display settings.",
+        "objective": "Validate that only the enabled property appears, correctly formatted and functional, with no residual UI elements from disabled ones.",
+        "extra_info": "None",
+        "expected_result": "Main interface shows only one section titled 'Recent Categories' containing at least three example category names (e.g., 'Length', 'Weight', 'Temperature')."
+    },
+    {
+        "id": "TC-03-05",
+        "name": "Toggle property visibility mid-session and observe immediate UI update",
+        "description": "While on the main screen, user opens display settings, unchecks 'Conversion History', saves, and returns to main screen without restarting the app.",
+        "objective": "Confirm real-time removal of the 'Conversion History' section without requiring app reload.",
+        "extra_info": "None",
+        "expected_result": "The 'Conversion History' section disappears instantly upon returning to main screen; other enabled sections remain unchanged."
+    },
+    {
+        "id": "TC-04-01",
+        "name": "Enter valid positive decimal number",
+        "description": "User enters a legitimate positive decimal value (e.g., '123.45') into the numeric conversion input field.",
+        "objective": "Verify that valid decimal numbers are accepted and processed without error.",
+        "extra_info": "123.45",
+        "expected_result": "Input is accepted; conversion proceeds normally; no error message appears."
+    },
+    {
+        "id": "TC-04-02",
+        "name": "Enter valid negative integer",
+        "description": "User enters a negative whole number (e.g., '-789') into the numeric conversion field.",
+        "objective": "Ensure negative integers are accepted as valid numeric input.",
+        "extra_info": "-789",
+        "expected_result": "Input is accepted; conversion proceeds normally; no error message appears."
+    },
+    {
+        "id": "TC-04-03",
+        "name": "Enter invalid alphabetic characters",
+        "description": "User types letters (e.g., 'abc') into the numeric conversion field.",
+        "objective": "Confirm non-numeric characters (excluding '.' and '-') trigger inline validation and prevent submission.",
+        "extra_info": "abc",
+        "expected_result": "Inline error message appears (e.g., 'Please enter a valid number'); conversion is disabled or ignored until corrected."
+    },
+    {
+        "id": "TC-04-04",
+        "name": "Enter mixed invalid symbols",
+        "description": "User enters symbols like '@#$', '12a3!', or '5.6.7' into the numeric field.",
+        "objective": "Validate that multiple or repeated invalid characters (including double decimal points) are rejected.",
+        "extra_info": "5.6.7",
+        "expected_result": "Inline error message appears; input is not processed; cursor remains active for correction."
+    },
+    {
+        "id": "TC-04-05",
+        "name": "Submit empty input",
+        "description": "User taps convert button without entering any characters in the numeric field.",
+        "objective": "Verify behavior when field is completely empty.",
+        "extra_info": "None",
+        "expected_result": "Inline error message appears (e.g., 'Value cannot be empty'); conversion is not triggered."
+    },
+    {
+        "id": "TC-04-06",
+        "name": "Submit whitespace-only input",
+        "description": "User enters only spaces, tabs, or newlines (e.g., '   ') and attempts conversion.",
+        "objective": "Ensure leading/trailing/only whitespace is treated as invalid and handled gracefully.",
+        "extra_info": "",
+        "expected_result": "Inline error message appears; input is trimmed and found empty; conversion is blocked."
+    },
+    {
+        "id": "TC-04-07",
+        "name": "Enter single decimal point",
+        "description": "User types only '.' into the numeric field.",
+        "objective": "Test edge case where decimal point lacks associated digits.",
+        "extra_info": ".",
+        "expected_result": "Inline error message appears (e.g., 'Invalid number format'); conversion is disabled."
+    },
+    {
+        "id": "TC-04-08",
+        "name": "Enter standalone minus sign",
+        "description": "User types only '-' into the numeric field.",
+        "objective": "Validate handling of isolated unary minus without numeric follow-up.",
+        "extra_info": "-",
+        "expected_result": "Inline error message appears; input is rejected as incomplete."
+    },
+    {
+        "id": "TC-04-09",
+        "name": "Enter number with trailing decimal (e.g., '42.')",
+        "description": "User enters a whole number followed by a decimal point but no fractional digits.",
+        "objective": "Determine if trailing decimal is accepted (per common UX conventions) or flagged.",
+        "extra_info": "42.",
+        "expected_result": "Input is accepted (treated as '42.0'); no error message appears; conversion proceeds."
+    },
+    {
+        "id": "TC-04-10",
+        "name": "Paste invalid clipboard content",
+        "description": "User pastes non-numeric text (e.g., 'N/A', '—', or '∞') into the numeric field.",
+        "objective": "Ensure paste operation respects input validation rules same as keyboard entry.",
+        "extra_info": "N/A",
+        "expected_result": "Inline error message appears; pasted content is either rejected or auto-cleared on blur/focus loss."
+    },
+    {
+        "id": "TC-05-01",
+        "name": "Settings retained after app restart",
+        "description": "Verifies that all user-configured settings (unit visibility, display order, currency) remain unchanged after closing and reopening the app.",
+        "objective": "Confirm persistence of settings across app lifecycle restarts.",
+        "extra_info": "Unit visibility: Temperature, Length; Display order: Amount, Currency, Unit; Currency preference: USD",
+        "expected_result": "All previously saved settings (e.g., 'Temperature' and 'Length' units visible, 'USD' selected as default currency, custom display order 'Amount → Currency → Unit') are restored exactly as configured."
+    },
+    {
+        "id": "TC-05-02",
+        "name": "Currency preference persists after device reboot",
+        "description": "Checks whether the selected default currency remains saved after a full device restart.",
+        "objective": "Validate settings survive OS-level restart, not just app process termination.",
+        "extra_info": "Default currency: EUR",
+        "expected_result": "The user's chosen currency (e.g., EUR) is still active as the default in the converter interface upon first launch post-reboot."
+    },
+    {
+        "id": "TC-05-03",
+        "name": "Hidden units remain hidden after session restore",
+        "description": "Ensures units explicitly disabled by the user (e.g., 'Pressure', 'Data') stay hidden across app sessions.",
+        "objective": "Confirm unit visibility toggles are persisted correctly.",
+        "extra_info": "Hidden units: Pressure, Data",
+        "expected_result": "Units marked as 'hidden' before app exit do not appear in the unit selection list or conversion options after relaunch."
+    },
+    {
+        "id": "TC-05-04",
+        "name": "Custom display order preserved after update",
+        "description": "Validates that user-defined display property ordering (e.g., 'Unit → Amount → Currency') survives an app update and subsequent launch.",
+        "objective": "Ensure settings persistence is resilient to version upgrades.",
+        "extra_info": "Display order: Unit, Amount, Currency",
+        "expected_result": "The display sequence matches the user’s last configuration, with no reversion to default order."
+    },
+    {
+        "id": "TC-05-05",
+        "name": "Settings intact after force stop and relaunch",
+        "description": "Tests persistence when the app is force-stopped via system settings and then reopened.",
+        "objective": "Verify robustness against abrupt process termination.",
+        "extra_info": "Enabled units: Length, Mass, Time; Default currency: JPY; Display order: Currency, Amount",
+        "expected_result": "All settings—including enabled units, currency, and display order—match pre-force-stop configuration."
+    },
+    {
+        "id": "TC-05-06",
+        "name": "Empty or reset settings not applied on first launch",
+        "description": "Confirms that no default or fallback values override user settings—even if internal storage is initially empty or corrupted.",
+        "objective": "Ensure settings are only loaded from persistent user store, not regenerated.",
+        "extra_info": "None",
+        "expected_result": "App displays 'No settings found' warning or prompts for initial setup instead of silently applying defaults, preserving integrity of user intent."
     }
 ]

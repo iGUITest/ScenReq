@@ -175,42 +175,50 @@ def analyze_existing_dir(app_dir: str) -> dict:
     out_dir = Path(ANALYSIS_DIR) / pkg
     ensure_dir(out_dir)
 
-    # Try legacy activity analysis
+    analysis_json_path = None
+
     try:
         merged_dir = base.get('merged_dir')
         activity_list_path = base.get('activity_list_path')
         if merged_dir and activity_list_path and Path(merged_dir).exists():
             txt_path, json_path = combina_activity(merged_dir, out_dir.as_posix(), activity_list_path)
-            return {"ok": True, "analysis_txt_path": txt_path, "analysis_json_path": json_path, **base}
+            try:
+                with open(json_path, 'r', encoding='utf-8') as f:
+                    legacy_data = json.load(f)
+                has_valid = any(
+                    not item.get('function', '').startswith('[-]')
+                    for item in legacy_data
+                )
+                if has_valid:
+                    return {"ok": True, "analysis_txt_path": txt_path, "analysis_json_path": json_path, **base}
+                analysis_json_path = json_path
+            except Exception:
+                pass
     except Exception:
         pass
 
-    # Fallback: use enhanced pipeline results
-    acts = base.get('activities', [])
-    ans = []
     enhanced_dir = base.get('enhanced_output_dir')
     enhanced_json = Path(enhanced_dir) / "activity_analysis_enhanced.json" if enhanced_dir else None
     if enhanced_json and enhanced_json.exists():
         try:
             enhanced_data = json.loads(enhanced_json.read_text(encoding="utf-8"))
-            for item in enhanced_data:
-                ans.append({"activity": item.get("activity", ""), "function": item.get("function", "")})
+            ans = [{"activity": item.get("activity", ""), "function": item.get("function", "")}
+                   for item in enhanced_data
+                   if not item.get("function", "").startswith("[-]")]
+            if ans:
+                json_path = out_dir / 'activity_analysis_results.json'
+                txt_path = out_dir / 'activity_analysis_results.txt'
+                with open(json_path.as_posix(), 'w', encoding='utf-8') as f:
+                    json.dump(ans, f, ensure_ascii=False, indent=4)
+                with open(txt_path.as_posix(), 'w', encoding='utf-8') as f:
+                    for item in ans:
+                        f.write(f"=== {item['activity']} ===\n{item['function']}\n\n")
+                return {"ok": True, "analysis_txt_path": txt_path.as_posix(), "analysis_json_path": json_path.as_posix(), **base}
         except Exception:
             pass
 
-    if not ans:
-        for full in acts:
-            short = full.split('.')[-1].replace(';', '')
-            ans.append({"activity": short, "function": "[-] 增强分析结果暂不可用"})
-
-    json_path = out_dir / 'activity_analysis_results.json'
-    txt_path = out_dir / 'activity_analysis_results.txt'
-    with open(json_path.as_posix(), 'w', encoding='utf-8') as f:
-        json.dump(ans, f, ensure_ascii=False, indent=4)
-    with open(txt_path.as_posix(), 'w', encoding='utf-8') as f:
-        for item in ans:
-            f.write(f"=== {item['activity']} ===\n{item['function']}\n\n")
-    return {"ok": True, "analysis_txt_path": txt_path.as_posix(), "analysis_json_path": json_path.as_posix(), **base}
+    if analysis_json_path:
+        return {"ok": True, "analysis_txt_path": str(Path(analysis_json_path).with_suffix('.txt')), "analysis_json_path": str(analysis_json_path), **base}
 
 
 def analyze_batch_dir(root_dir: str, limit: int = 10) -> list:

@@ -5,8 +5,8 @@ import logging
 from typing import List, Dict, Any
 from pathlib import Path
 
-# Add project root to sys.path
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+# Add project root (ScenReq/) to sys.path so `from Req.X` resolves to ScenReq/Req/
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent   # ScenReq/
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 

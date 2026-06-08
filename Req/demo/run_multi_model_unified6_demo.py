@@ -113,6 +113,7 @@ def _find_app_list(app_dir: Path) -> Path | None:
 
 def build_prompt(app_name: str, package_name: str, main_activity: str, analysis_json_path: str, app_intro: str | None, code_doc: str | None, use_intro: bool, use_activity: bool, use_code: bool, lang: str = 'zh') -> str:
     analysis = _read_analysis(analysis_json_path) if use_activity else []
+    analysis = [item for item in analysis if not item.get('function', '').startswith('[-]')]
     
     if lang == 'en':
         parts = [f"App Name: {app_name}", f"Package: {package_name}", f"Launch Activity: {main_activity}"]

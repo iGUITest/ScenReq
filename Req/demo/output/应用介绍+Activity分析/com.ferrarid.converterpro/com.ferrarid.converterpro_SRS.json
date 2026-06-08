@@ -1,32 +1,38 @@
 [
     {
         "id": "FR-001",
-        "name": "主界面展示欢迎信息与功能入口",
-        "requirement": "系统应在应用启动后立即在主界面显示清晰的欢迎文案（如'欢迎使用单位转换器Pro'）及至少三个常用转换类别图标（如长度、温度、重量），所有元素应完整渲染、无重叠或截断。",
-        "type": "功能性"
+        "name": "Unit Conversion Execution",
+        "requirement": "The system shall allow the user to select a source unit and a target unit from predefined categories (e.g., length, weight, temperature), input a numeric value, and instantly display the converted result with appropriate precision and unit labeling.",
+        "type": "Functional"
     },
     {
         "id": "FR-002",
-        "name": "网页内链跳转功能",
-        "requirement": "系统应在网页浏览过程中支持用户点击页面内任意超链接后，于当前页面内加载目标网页内容，且不触发外部浏览器打开；目标页需保持JavaScript执行能力与DOM存储可用性。",
-        "type": "功能性"
+        "name": "Unit Category and Unit Visibility Management",
+        "requirement": "The system shall allow the user to enable or disable specific units within each category (e.g., hide 'furlong' under length), and persist this configuration so that hidden units do not appear in the unit selection menus during conversion.",
+        "type": "Functional"
     },
     {
         "id": "FR-003",
-        "name": "网页JavaScript脚本正常执行",
-        "requirement": "系统应在网页加载完成后正确执行页面内嵌或引用的JavaScript代码（如动态计算表单、按钮点击响应、本地存储写入），用户操作对应UI变化或数据反馈应即时可见。",
-        "type": "功能性"
+        "name": "Display Property Selection and Ordering",
+        "requirement": "The system shall allow the user to select which properties (e.g., conversion history, favorite units, recent categories) are visible on the main interface, and reorder their display sequence; the updated layout shall be immediately reflected upon returning to the main screen.",
+        "type": "Functional"
     },
     {
         "id": "FR-004",
-        "name": "网页DOM存储持久化支持",
-        "requirement": "系统应支持网页通过localStorage或sessionStorage写入的数据在同一次会话中跨页面跳转后仍可读取；若用户返回上一网页，此前保存的键值对应完整存在且可被脚本正确访问。",
-        "type": "功能性"
+        "name": "Currency Conversion with Real-Time Exchange Rates",
+        "requirement": "The system shall allow the user to select source and target currencies, enter an amount, and display the converted value using up-to-date exchange rates; if offline or rate data is unavailable, the system shall display a clear message indicating stale or missing rate information without crashing.",
+        "type": "Functional"
     },
     {
         "id": "FR-005",
-        "name": "主界面无交互元素时的引导提示",
-        "requirement": "当主界面未提供显式按钮或输入控件时，系统应显示明确的操作引导文案（如'点击下方图标开始转换'）或高亮示意区域，避免用户产生‘页面无响应’误解。",
-        "type": "界面"
+        "name": "Input Validation for Numeric Conversion Fields",
+        "requirement": "The system shall validate user input in numeric fields during conversion: reject non-numeric characters (except decimal point and minus sign), handle empty or whitespace-only inputs gracefully, and display an appropriate inline error message without blocking navigation.",
+        "type": "Functional"
+    },
+    {
+        "id": "FR-006",
+        "name": "Settings Persistence Across Sessions",
+        "requirement": "The system shall persist all user-configured settings—including unit visibility, display property selection/ordering, and currency preferences—across app restarts and remain intact until explicitly modified by the user.",
+        "type": "Functional"
     }
 ]

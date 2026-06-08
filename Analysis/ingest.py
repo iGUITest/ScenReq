@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # 配置
-SOURCE_ROOT = r"d:\nju\源代码解析\SourceCode\ConverterNOW"
-OUTPUT_DIR = r"d:\nju\源代码解析\Analysis\output"
+SOURCE_ROOT = os.getenv("SOURCE_ROOT", r"d:\nju\源代码解析\SourceCode\ConverterNOW")
+OUTPUT_DIR = os.getenv("ANALYSIS_OUTPUT_DIR", r"d:\nju\源代码解析\Analysis\output")
 DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY")
 
 # 确保输出目录存在
